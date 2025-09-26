@@ -1,957 +1,1127 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Maker by Qwenta - Documentation Projet</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
     <div class="container">
-      <!-- Navigation -->
-      <nav class="nav">
-        <div class="nav-brand">Menu Maker by Qwenta - Documentation Projet</div>
-        <div class="nav-links">
-          <button class="nav-link active" data-section="home">Accueil</button>
-          <button class="nav-link" data-section="kanban">Tableau Kanban</button>
-          <button class="nav-link" data-section="specs">
-            Spécifications Techniques
-          </button>
-          <button class="nav-link" data-section="veille">
-            Veille Technologique
-          </button>
-          <button class="nav-link" data-section="presentation">
-            Présentation
-          </button>
-        </div>
-      </nav>
-
-      <!-- Accueil -->
-      <section id="home" class="section active">
-        <div class="home-hero">
-          <h1>🍽️ Menu Maker by Qwenta</h1>
-          <p>
-            Documentation complète du projet - Préparation et planification pour
-            Soufiane
-          </p>
-
-          <div class="menu-grid">
-            <div class="menu-card" data-section="kanban">
-              <span class="menu-icon">📋</span>
-              <h3>Tableau Kanban</h3>
-              <p>
-                Vue d'ensemble des 27 tâches du projet organisées par priorité
-                avec estimations et assignations
-              </p>
-              <span class="menu-badge">110 Story Points</span>
+        <!-- Navigation -->
+        <nav class="nav">
+            <div class="nav-brand">Menu Maker by Qwenta - Documentation Projet</div>
+            <div class="nav-links">
+                <button class="nav-link active" data-section="home">Accueil</button>
+                <button class="nav-link" data-section="kanban">Tableau Kanban</button>
+                <button class="nav-link" data-section="specs">Spécifications Techniques</button>
+                <button class="nav-link" data-section="veille">Veille Technologique</button>
+                <button class="nav-link" data-section="presentation">Présentation</button>
             </div>
+        </nav>
 
-            <div class="menu-card" data-section="specs">
-              <span class="menu-icon">⚙️</span>
-              <h3>Spécifications Techniques</h3>
-              <p>
-                Architecture complète, choix technologiques et détails
-                d'implémentation du projet
-              </p>
-              <span class="menu-badge">15 pages max</span>
-            </div>
-
-            <div class="menu-card" data-section="veille">
-              <span class="menu-icon">🔍</span>
-              <h3>Veille Technologique</h3>
-              <p>
-                Méthodologie et ressources pour maintenir une veille tech
-                efficace sur le projet
-              </p>
-              <span class="menu-badge">Guide PDF</span>
-            </div>
-
-            <div class="menu-card" data-section="presentation">
-              <span class="menu-icon">📊</span>
-              <h3>Présentation Soufiane</h3>
-              <p>
-                Support de présentation synthétique pour le retour de congés du
-                Product Owner
-              </p>
-              <span class="menu-badge">20 slides max</span>
-            </div>
-          </div>
-
-          <div class="executive-summary">
-            <h3>📈 Résumé Exécutif</h3>
-            <p>
-              <strong>Équipe :</strong> Thomas (Front-End), Henriette
-              (Back-End), Soufiane (Product Owner)
-            </p>
-            <p>
-              <strong>Durée estimée :</strong> 12 semaines (10 semaines dev + 2
-              semaines buffer)
-            </p>
-            <p>
-              <strong>Technologies :</strong> React.js, Tailwind CSS, Supabase,
-              TypeScript, Vercel
-            </p>
-            <p>
-              <strong>Statut :</strong> Préparation terminée, prêt pour
-              lancement développement
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Tableau Kanban -->
-      <section id="kanban" class="section">
-        <h2>📋 Tableau Kanban du Projet</h2>
-
-        <div class="stats-overview">
-          <div class="stat-item">
-            <div class="stat-number">68</div>
-            <div class="stat-label">Thomas (Front)</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">43</div>
-            <div class="stat-label">Henriette (Back)</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">3</div>
-            <div class="stat-label">DevOps</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">5</div>
-            <div class="stat-label">Validation</div>
-          </div>
-        </div>
-
-        <div class="kanban-embed">
-          <div id="kanban-loading">Chargement du tableau Kanban...</div>
-        </div>
-      </section>
-
-      <!-- Spécifications Techniques -->
-      <section id="specs" class="section">
-        <h2>⚙️ Spécifications Techniques</h2>
-        <p class="doc-metadata">
-          <strong>Version 1.0</strong> - Thomas Sifferlé - 08/09/25 - Approuvé
-          par Soufiane
-        </p>
-
-        <h3>I. Choix technologiques</h3>
-        <p>
-          <strong
-            >État des lieux des besoins fonctionnels et de leurs solutions
-            techniques :</strong
-          >
-        </p>
-
-        <div class="tech-requirements-table">
-          <table class="tech-table">
-            <thead>
-              <tr>
-                <th>Besoin</th>
-                <th>Contraintes</th>
-                <th>Solution</th>
-                <th>Description de la solution</th>
-                <th>Justification (2 arguments)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Interface utilisateur dynamique</td>
-                <td>
-                  Interface moderne et réactive<br />Compatible avec les
-                  maquettes Figma<br />Gestion d'état complexe
-                </td>
-                <td>React.js + Tailwind CSS</td>
-                <td>
-                  Framework JavaScript pour créer des interfaces utilisateur
-                  composants, couplé à un framework CSS utility-first pour un
-                  design cohérent et responsive.
-                </td>
-                <td>
-                  1) React est imposé par les spécifications et offre une
-                  excellente réactivité pour les interfaces dynamiques<br />2)
-                  Tailwind CSS assure une cohérence visuelle et accélère le
-                  développement avec ses classes utilitaires.
-                </td>
-              </tr>
-              <tr>
-                <td>Drag & Drop des éléments de menu</td>
-                <td>
-                  - Réorganisation intuitive des plats<br />- Expérience
-                  utilisateur fluide<br />- Compatible React
-                </td>
-                <td>@hello-pangea/dnd</td>
-                <td>
-                  Bibliothèque React spécialisée dans les interactions
-                  drag-and-drop avec gestion des états et animations.
-                </td>
-                <td>
-                  1) Bibliothèque mature et performante, parfaitement intégrée à
-                  l'écosystème React.<br />2) Gestion native des états de
-                  glisser-déposer et excellente accessibilité.
-                </td>
-              </tr>
-              <tr>
-                <td>Gestion des formulaires</td>
-                <td>
-                  - Validation en temps réel<br />- Performance optimisée<br />-
-                  UX fluide
-                </td>
-                <td>React Hook Form + Zod</td>
-                <td>
-                  React Hook Form pour la gestion performante des formulaires,
-                  Zod pour la validation des schémas de données.
-                </td>
-                <td>
-                  1) React Hook Form minimise les re-rendus et améliore les
-                  performances.<br />2) Zod assure une validation
-                  TypeScript-native cohérente frontend/backend.
-                </td>
-              </tr>
-              <tr>
-                <td>Gestion d'état global</td>
-                <td>
-                  - État partagé entre composants<br />- Gestion du cache API<br />-
-                  Synchronisation données
-                </td>
-                <td>React Query + Zustand</td>
-                <td>
-                  React Query pour la gestion du cache et synchronisation
-                  serveur, Zustand pour l'état local global simple.
-                </td>
-                <td>
-                  1) React Query optimise automatiquement les requêtes et gère
-                  le cache intelligemment.<br />2) Zustand offre une API simple
-                  sans boilerplate pour l'état global.
-                </td>
-              </tr>
-              <tr>
-                <td>Authentification utilisateur</td>
-                <td>
-                  - Sécurité robuste<br />- Gestion des sessions<br />- Magic
-                  Link – email only
-                </td>
-                <td>Supabase Auth</td>
-                <td>
-                  Service d'authentification complet avec gestion des sessions,
-                  OAuth, et sécurité intégrée.
-                </td>
-                <td>
-                  1) Solution clé en main avec toutes les fonctionnalités d'auth
-                  (signup, login, reset, etc.).<br />2) Sécurité
-                  enterprise-grade avec JWT et sessions automatiques.
-                </td>
-              </tr>
-              <tr>
-                <td>Base de données</td>
-                <td>
-                  - Relationnel pour menus/plats<br />- Performances
-                  optimales<br />- Sécurité avancée
-                </td>
-                <td>PostgreSQL via Supabase</td>
-                <td>
-                  Base de données relationnelle hébergée avec Row Level Security
-                  et API REST auto-générée.
-                </td>
-                <td>
-                  1) PostgreSQL est performant pour les données relationnelles
-                  complexes (menus → catégories → plats).<br />2) Supabase
-                  génère automatiquement une API REST sécurisée avec RLS.
-                </td>
-              </tr>
-              <tr>
-                <td>Stockage des fichiers</td>
-                <td>
-                  - Upload logos restaurants<br />- Images de plats<br />-
-                  Sécurité uploads
-                </td>
-                <td>Supabase Storage</td>
-                <td>
-                  Service de stockage avec validation MIME, redimensionnement
-                  automatique et CDN intégré.
-                </td>
-                <td>
-                  1) Intégration native avec l'authentification Supabase
-                  (sécurité par utilisateur).<br />2) Validation automatique des
-                  types de fichiers et optimisation images.
-                </td>
-              </tr>
-              <tr>
-                <td>Génération PDF</td>
-                <td>
-                  - Export haute qualité<br />- Personnalisation design<br />-
-                  Performance
-                </td>
-                <td>React-PDF</td>
-                <td>
-                  Bibliothèque React pour générer des PDFs programmatiquement
-                  avec contrôle total du layout.
-                </td>
-                <td>
-                  1) Rendu cohérent avec l'interface React, même logique de
-                  composants.<br />2) Contrôle précis de la mise en page pour
-                  respecter le design des menus
-                </td>
-              </tr>
-              <tr>
-                <td>Intégrations externes Diffusion des menus et export</td>
-                <td>
-                  - Paiement sécurisé<br />- Partage Instagram<br />- Export
-                  Deliveroo
-                </td>
-                <td>Stripe + Instagram API + Deliveroo API</td>
-                <td>
-                  - Stripe pour les paiements d'impression<br />- Instagram
-                  Basic Display API pour le partage<br />- API Deliveroo Partner
-                </td>
-                <td>
-                  1) Stripe est la référence pour les paiements en ligne avec
-                  excellente UX.<br />2) APIs officielles pour garantir la
-                  compatibilité long terme.
-                </td>
-              </tr>
-              <tr>
-                <td>Hébergement frontend</td>
-                <td>
-                  - Déploiement automatique<br />- Performance globale<br />-
-                  Domaine custom
-                </td>
-                <td>Vercel</td>
-                <td>
-                  Plateforme d'hébergement optimisée pour React avec CI/CD
-                  automatique et CDN mondial.
-                </td>
-                <td>
-                  1) Intégration native avec React et GitHub pour déploiements
-                  automatiques.<br />2) CDN global et optimisations automatiques
-                  (lazy loading, compression).
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <h3>II. Liens avec le back-end</h3>
-        <div class="spec-section">
-          <h4>Langage serveur</h4>
-          <p><strong>Supabase (PostgreSQL + Edge Functions)</strong></p>
-          <ul>
-            <li>Backend-as-a-Service avec PostgreSQL comme base de données</li>
-            <li>
-              Edge Functions en TypeScript pour la logique métier complexe
-            </li>
-            <li>API REST auto-générée avec authentification intégrée</li>
-          </ul>
-
-          <h4>API choisie</h4>
-          <p><strong>API REST Supabase + APIs externes</strong></p>
-          <ul>
-            <li>
-              API REST automatique générée par Supabase à partir du schéma
-              PostgreSQL
-            </li>
-            <li>
-              APIs externes : Stripe (paiements), Instagram (partage), Deliveroo
-              (export)
-            </li>
-            <li>Real-time subscriptions pour les mises à jour en temps réel</li>
-          </ul>
-
-          <h4>Base de données</h4>
-          <p><strong>PostgreSQL (via Supabase)</strong></p>
-          <ul>
-            <li>
-              Base relationnelle pour gérer les relations complexes (restaurants
-              → menus → catégories → plats)
-            </li>
-            <li>
-              Row Level Security (RLS) pour la sécurité au niveau utilisateur
-            </li>
-            <li>Performances optimisées avec indexation automatique</li>
-          </ul>
-        </div>
-
-        <h3>III. Préconisations concernant le domaine et l'hébergement</h3>
-        <div class="spec-section">
-          <h4>Nom de domaine</h4>
-          <ul>
-            <li><strong>menu.qwenta.fr</strong> (sous-domaine Qwenta)</li>
-            <li>Cohérence avec l'écosystème Qwenta</li>
-            <li>SSL automatique via Vercel</li>
-          </ul>
-
-          <h4>Hébergement</h4>
-          <ul>
-            <li>
-              <strong>Frontend</strong> : Vercel (CDN mondial, déploiements
-              automatiques)
-            </li>
-            <li>
-              <strong>Backend/DB</strong> : Supabase (infrastructure européenne
-              RGPD-compliant)
-            </li>
-            <li>
-              <strong>CDN</strong> : Intégré Vercel + Supabase pour
-              optimisations globales
-            </li>
-          </ul>
-
-          <h4>Adresses e-mail</h4>
-          <ul>
-            <li>
-              <strong>Notifications</strong> : Via Supabase Auth (reset
-              password, confirmations)
-            </li>
-            <li>
-              <strong>Support</strong> : Intégration possible avec le système
-              e-mail Qwenta
-            </li>
-          </ul>
-        </div>
-
-        <h3>IV. Accessibilité</h3>
-        <div class="spec-section">
-          <h4>Compatibilité navigateur</h4>
-          <ul>
-            <li><strong>Chrome</strong> : Dernières 2 versions</li>
-            <li><strong>Safari</strong> : Dernières 2 versions</li>
-            <li><strong>Firefox</strong> : Dernières 2 versions</li>
-            <li>Support JavaScript ES2020+ requis</li>
-          </ul>
-
-          <h4>Types d'appareils</h4>
-          <ul>
-            <li><strong>Desktop uniquement</strong> (selon spécifications)</li>
-            <li>Résolution minimum : 1280×720px</li>
-            <li>Navigation clavier complète</li>
-            <li>Compatible lecteurs d'écran (ARIA labels)</li>
-          </ul>
-        </div>
-
-        <h3>V. Recommandations en termes de sécurité</h3>
-        <div class="spec-section">
-          <h4>Sécurité des accès</h4>
-          <ul>
-            <li>
-              <strong>Authentification</strong> : JWT via Supabase Auth avec
-              refresh tokens
-            </li>
-            <li>
-              <strong>Sessions</strong> : Expiration automatique et
-              renouvellement sécurisé
-            </li>
-            <li>
-              <strong>HTTPS</strong> : Obligatoire sur toutes les communications
-            </li>
-          </ul>
-
-          <h4>Sécurité des données</h4>
-          <ul>
-            <li>
-              <strong>Validation</strong> : Zod pour validation frontend/backend
-              cohérente
-            </li>
-            <li>
-              <strong>RLS</strong> : Row Level Security PostgreSQL pour
-              isolation des données
-            </li>
-            <li>
-              <strong>Upload</strong> : Validation MIME types et taille des
-              fichiers
-            </li>
-          </ul>
-
-          <h4>Protection RGPD</h4>
-          <ul>
-            <li>
-              <strong>Consentement</strong> : Gestion des cookies via Vercel
-              Analytics
-            </li>
-            <li>
-              <strong>Données</strong> : Hébergement EU (Supabase région
-              européenne)
-            </li>
-            <li>
-              <strong>Suppression</strong> : Outils Supabase pour
-              right-to-be-forgotten
-            </li>
-          </ul>
-        </div>
-
-        <h3>VI. Maintenance du site et futures mises à jour</h3>
-        <div class="spec-section">
-          <h4>Stratégie de maintenance</h4>
-          <ul>
-            <li>
-              <strong>Monitoring</strong> : Supabase Dashboard pour surveillance
-              temps réel
-            </li>
-            <li>
-              <strong>Logs</strong> : Centralisés via Vercel Analytics et
-              Supabase
-            </li>
-            <li>
-              <strong>Backups</strong> : Automatiques via Supabase
-              (point-in-time recovery)
-            </li>
-          </ul>
-
-          <h4>Mises à jour et évolutions</h4>
-          <ul>
-            <li>
-              <strong>CI/CD</strong> : GitHub Actions pour tests automatiques +
-              déploiement Vercel
-            </li>
-            <li>
-              <strong>Versioning</strong> : Git flow avec branches de feature et
-              review code
-            </li>
-            <li>
-              <strong>Rollback</strong> : Rollback instantané via Vercel
-              Dashboard
-            </li>
-          </ul>
-
-          <h4>Montée en charge</h4>
-          <ul>
-            <li>
-              <strong>Auto-scaling</strong> : Automatique via Supabase et Vercel
-            </li>
-            <li>
-              <strong>Cache</strong> : React Query côté client + CDN Vercel
-            </li>
-            <li>
-              <strong>Optimisations</strong> : Code splitting React + lazy
-              loading automatique
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Veille Technologique -->
-      <section id="veille" class="section">
-        <h2>🔍 Présentation de l'outil de veille technique - WAKELET</h2>
-
-        <div class="wakelet-header">
-          <img
-            src="/img/wakelet-hero.jpg"
-            alt="Menu Maker By Qwenta - Présentation Wakelet"
-            class="wakelet-hero-image"
-          />
-          <p class="wakelet-subtitle">
-            Menu Maker By Qwenta - Présentation de l'outil de veille technique
-            <strong>WAKELET</strong>
-          </p>
-        </div>
-
-        <h3>Pourquoi faire une veille technique ?</h3>
-
-        <div class="why-veille-grid">
-          <div class="why-card">
-            <div class="why-number">1</div>
-            <h4>Suivre l'évolution rapide des technologies</h4>
-            <p>
-              Le web évolue constamment : <strong>nouveaux frameworks</strong>,
-              mises à jour de librairies, bonnes pratiques qui changent. La
-              veille permet de rester à jour et d'éviter d'utiliser des
-              solutions obsolètes.
-            </p>
-          </div>
-
-          <div class="why-card">
-            <div class="why-number">2</div>
-            <h4>Améliorer la qualité et la pertinence de ses projets</h4>
-            <p>
-              En découvrant régulièrement de <strong>nouveaux outils</strong>,
-              approches ou retours d'expérience, on peut optimiser son code,
-              renforcer l'accessibilité, la performance et la sécurité de ses
-              applications.
-            </p>
-          </div>
-
-          <div class="why-card">
-            <div class="why-number">3</div>
-            <h4>Prévenir les risques de sécurité et de maintenance</h4>
-            <p>
-              Une veille partagée détecte tôt les
-              <strong>vulnérabilités</strong> (zero-day) ou les librairies
-              abandonnées, ce qui permet d'appliquer des correctifs, de
-              restreindre les déploiements ou de planifier une migration avant
-              qu'un incident coûteux n'arrive.
-            </p>
-          </div>
-        </div>
-
-        <h3>Choix de l'outil de veille</h3>
-
-        <div class="wakelet-choice-section">
-          <div class="wakelet-logo-section">
-            <img
-              src="/img/wakelet-logo.png"
-              alt="Logo Wakelet"
-              class="wakelet-logo"
-            />
-            <h4>Wakelet</h4>
-          </div>
-
-          <div class="wakelet-advantages">
-            <div class="advantage-item">
-              <strong>Sélectivité et pertinence des contenus :</strong>
-              contrairement à un agrégateur RSS brut comme Feedly qui oblige à
-              trier beaucoup de bruit, Wakelet me permet de rassembler
-              uniquement des ressources que j'ai jugées utiles pour ma stack
-              (documentation officielle, tutoriels, articles ciblés). Cela
-              garantit que ma veille est directement exploitable pour mes
-              projets.
-            </div>
-
-            <div class="advantage-item">
-              <strong>Centralisation multi-sources :</strong> Wakelet me sert de
-              hub unique où je regroupe plusieurs formats et canaux (articles,
-              docs, vidéos, RSS). Pour compléter, j'y ai intégré une colonne RSS
-              personnalisée (via Reddit.rss et Rss.app), ce qui combine la
-              flexibilité des flux automatisés avec la curation manuelle.<br />
-              <strong>Résultat :</strong> une veille à la fois organisée et
-              complète.
-            </div>
-          </div>
-
-          <div class="wakelet-links">
-            <div class="wakelet-link-item">
-              <strong>Liens vers la veille ressources de dev :</strong><br />
-              <a
-                href="https://wakelet.com/wake/gfUWsJhx__7de1gSmU-CM"
-                target="_blank"
-                >https://wakelet.com/wake/gfUWsJhx__7de1gSmU-CM</a
-              >
-            </div>
-
-            <div class="wakelet-link-item">
-              <strong>Lien vers la veille développement web général :</strong
-              ><br />
-              <a
-                href="https://wakelet.com/wake/vp9NOkwrXayMADkxdA7sx"
-                target="_blank"
-                >https://wakelet.com/wake/vp9NOkwrXayMADkxdA7sx</a
-              >
-            </div>
-          </div>
-        </div>
-
-        <h3>Choix des ressources</h3>
-
-        <div class="resources-section">
-          <h4>1. Ressources de développement (stack technique)</h4>
-
-          <div class="resource-subsection">
-            <h5>Carte mentale</h5>
-            <img
-              src="/img/carte-mentale-stack.png"
-              alt="Carte mentale ressources stack technique"
-              class="resource-image"
-            />
-
-            <h5>Exemples</h5>
-            <img
-              src="/img/exemples-stack.png"
-              alt="Exemples ressources stack technique"
-              class="resource-image"
-            />
-          </div>
-
-          <h4>2. Ressources de développement web général (veille globale)</h4>
-
-          <div class="resource-subsection">
-            <h5>Carte mentale</h5>
-            <img
-              src="/img/carte-mentale-generale.png"
-              alt="Carte mentale développement web général"
-              class="resource-image"
-            />
-
-            <h5>Exemples</h5>
-            <img
-              src="/img/exemples-generale.png"
-              alt="Exemples développement web général"
-              class="resource-image"
-            />
-          </div>
-        </div>
-
-        <h3>Flux RSS automatisés intégrés</h3>
-
-        <div class="rss-section">
-          <div class="rss-summary">
-            <div class="rss-item">
-              <strong>Flux Reddit multi-subreddit personnalisé :</strong>
-              <ul>
-                <li>8 communautés techniques ciblées Menu Maker</li>
-                <li>
-                  webdev, reactjs, node, stripe, tailwindcss, supabase, vercel,
-                  react
-                </li>
-                <li>Discussions et solutions en temps réel</li>
-              </ul>
-            </div>
-
-            <div class="rss-item">
-              <strong>Sites transformés via RSS.app :</strong>
-              <ul>
-                <li>Blogs officiels sans flux RSS natif</li>
-                <li>Actualités techniques automatisées</li>
-                <li>Mises à jour des technologies du projet</li>
-              </ul>
-            </div>
-
-            <div class="rss-item">
-              <strong>Approche hybride :</strong>
-              <ul>
-                <li>Curation manuelle = sélectivité et pertinence</li>
-                <li>Flux automatisés = réactivité et actualités</li>
-                <li>Combinaison optimale sans surcharge</li>
-              </ul>
-            </div>
-
-            <div class="rss-item">
-              <strong>Résultat :</strong>
-              <ul>
-                <li>90 ressources totales</li>
-                <li>Veille organisée ET dynamique</li>
-                <li>Couverture complète du stack technique</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <h3>Utilisations et Avantages</h3>
-
-        <div class="utilisation-section">
-          <img
-            src="/img/utilisations-schema.png"
-            alt="Schéma utilisations et avantages"
-            class="utilisation-schema"
-          />
-
-          <h4>Utilisation en entreprise :</h4>
-
-          <div class="enterprise-usage">
-            <div class="usage-item">
-              <span class="usage-number">1.</span>
-              <div class="usage-content">
-                <strong>Outil de centralisation :</strong><br />
-                Créer un hub de documentation qui centralise à la fois les
-                ressources techniques et les supports pédagogiques, permettant à
-                l'équipe d'avoir la même base de connaissances et d'être alertée
-                simultanément lors d'un changement important.
-              </div>
-            </div>
-
-            <div class="usage-item">
-              <span class="usage-number">2.</span>
-              <div class="usage-content">
-                <strong>Outil collaboratif :</strong><br />
-                Permettre à chaque membre d'apporter sa contribution à la veille
-                commune, renforçant l'esprit d'équipe et créant une dynamique
-                positive de partage des connaissances entre développeurs.
-              </div>
-            </div>
-
-            <div class="usage-item">
-              <span class="usage-number">3.</span>
-              <div class="usage-content">
-                <strong>Outil de sécurité et planification :</strong><br />
-                Détecter rapidement les bibliothèques abandonnées ou les failles
-                de sécurité critiques grâce à une surveillance quotidienne de
-                quelques minutes, permettant de réagir à temps en planifiant les
-                migrations ou corrections nécessaires.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <h3>Annexes : Export - Fichiers pdf complets</h3>
-
-        <div class="annexes-section">
-          <a
-            href="https://drive.google.com/file/d/184zUAB1zntp8H5man6rv2qy5tYnaiU3y/view?usp=sharing"
-            target="_blank"
-            class="annexe-item annexe-link"
-          >
-            <div class="annexe-content">
-              <div class="annexe-header">
-                <img
-                  src="/img/google-docs-icon.png"
-                  alt="Google Docs"
-                  class="docs-icon"
-                />
-                <span class="docs-label">Google Docs</span>
-              </div>
-              <h5>MENU MAKER #1.pdf</h5>
-              <p>
-                Export en pdf de la veille – Menu Maker #1 – Ressources de dev
-              </p>
-              <div class="click-indicator">📄 Cliquer pour ouvrir le PDF</div>
-            </div>
-          </a>
-
-          <a
-            href="https://drive.google.com/file/d/1vwrYameJmMPrefWLMGEhQ6tE5zkCUeAj/view?usp=sharing"
-            target="_blank"
-            class="annexe-item annexe-link"
-          >
-            <div class="annexe-content">
-              <div class="annexe-header">
-                <img
-                  src="/img/google-docs-icon.png"
-                  alt="Google Docs"
-                  class="docs-icon"
-                />
-                <span class="docs-label">Google Docs</span>
-              </div>
-              <h5>Menu-Maker #2.pdf</h5>
-              <p>
-                Export en pdf de la veille – Menu Maker #2 – Développement Web
-                Général
-              </p>
-              <div class="click-indicator">📄 Cliquer pour ouvrir le PDF</div>
-            </div>
-          </a>
-        </div>
-      </section>
-
-      <!-- Présentation -->
-      <section id="presentation" class="section">
-        <h2>📊 Présentation pour Soufiane</h2>
-        <p class="presentation-subtitle">
-          Support de présentation pour le retour de congés - 20 slides maximum
-        </p>
-
-        <div class="slides-container">
-          <!-- Slide 1 -->
-          <div class="slide">
-            <h3>🏠 Slide 1 - Bienvenue</h3>
-            <div class="slide-content">
-              <h4>Bon retour Soufiane ! 👋</h4>
-              <p><strong>Menu Maker by Qwenta</strong></p>
-              <p>Projet préparé et planifié pendant ton absence</p>
-              <p><em>Prêt pour le lancement du développement</em></p>
-            </div>
-          </div>
-
-          <!-- Slide 2 -->
-          <div class="slide">
-            <h3>📈 Slide 2 - État d'avancement</h3>
-            <div class="slide-content">
-              <ul>
-                <li>
-                  ✅ <strong>Spécifications techniques complètes</strong> (15
-                  pages)
-                </li>
-                <li>
-                  ✅ <strong>Tableau Kanban détaillé</strong> (27 tâches, 110
-                  story points)
-                </li>
-                <li>
-                  ✅ <strong>Architecture validée</strong> React + Supabase
-                </li>
-                <li>
-                  ✅ <strong>Répartition équipe</strong> Thomas (68pts) +
-                  Henriette (43pts)
-                </li>
-                <li>
-                  🎯 <strong>Estimation :</strong> 12 semaines (10 dev + 2
-                  buffer)
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Slide 3 -->
-          <div class="slide">
-            <h3>🎯 Slide 3 - Priorités définies</h3>
-            <div class="slide-content">
-              <div class="priorities-grid">
-                <div class="priority-card p1">
-                  <strong>P1 (13 tâches)</strong><br />
-                  Landing + Auth + CRUD Menu<br />
-                  <em>67 story points</em>
+        <!-- Accueil -->
+        <section id="home" class="section active">
+            <div class="home-hero">
+                <h1>🍽️ Menu Maker by Qwenta</h1>
+                <p>Documentation complète du projet - Préparation et planification pour Soufiane</p>
+                
+                <div class="menu-grid">
+                    <div class="menu-card" data-section="kanban">
+                        <span class="menu-icon">📋</span>
+                        <h3>Tableau Kanban</h3>
+                        <p>Vue d'ensemble des 27 tâches du projet organisées par priorité avec estimations et assignations</p>
+                        <span class="menu-badge">110 Story Points</span>
+                    </div>
+                    
+                    <div class="menu-card" data-section="specs">
+                        <span class="menu-icon">⚙️</span>
+                        <h3>Spécifications Techniques</h3>
+                        <p>Architecture complète, choix technologiques et détails d'implémentation du projet</p>
+                        <span class="menu-badge">15 pages max</span>
+                    </div>
+                    
+                    <div class="menu-card" data-section="veille">
+                        <span class="menu-icon">🔍</span>
+                        <h3>Veille Technologique</h3>
+                        <p>Méthodologie et ressources pour maintenir une veille tech efficace sur le projet</p>
+                        <span class="menu-badge">Guide PDF</span>
+                    </div>
+                    
+                    <div class="menu-card" data-section="presentation">
+                        <span class="menu-icon">📊</span>
+                        <h3>Présentation Soufiane</h3>
+                        <p>Support de présentation synthétique pour le retour de congés du Product Owner</p>
+                        <span class="menu-badge">20 slides max</span>
+                    </div>
                 </div>
-                <div class="priority-card p2">
-                  <strong>P2 (12 tâches)</strong><br />
-                  Dashboard + Intégrations<br />
-                  <em>38 story points</em>
+                
+                <div class="executive-summary">
+                    <h3>📈 Résumé Exécutif</h3>
+                    <p><strong>Équipe :</strong> Thomas (Front-End), Henriette (Back-End), Soufiane (Product Owner)</p>
+                    <p><strong>Durée estimée :</strong> 12 semaines (10 semaines dev + 2 semaines buffer)</p>
+                    <p><strong>Technologies :</strong> React.js, Tailwind CSS, Supabase, TypeScript, Vercel</p>
+                    <p><strong>Statut :</strong> Préparation terminée, prêt pour lancement développement</p>
                 </div>
-                <div class="priority-card p3">
-                  <strong>P3 (3 tâches)</strong><br />
-                  Branding + Tests<br />
-                  <em>13 story points</em>
-                </div>
-              </div>
             </div>
-          </div>
+        </section>
 
-          <!-- Slide 4 -->
-          <div class="slide">
-            <h3>⚙️ Slide 4 - Choix techniques validés</h3>
-            <div class="slide-content">
-              <div class="tech-grid">
-                <div>
-                  <h5>Frontend (Thomas)</h5>
-                  <ul>
-                    <li>React.js 18</li>
-                    <li>Tailwind CSS</li>
-                    <li>React-PDF</li>
-                    <li>Zustand</li>
-                  </ul>
+        <!-- Tableau Kanban -->
+        <section id="kanban" class="section">
+            <h2>📋 Tableau Kanban du Projet</h2>
+            
+            <div class="project-stats-kanban">
+                <div class="stat-item-kanban">
+                    <span class="stat-number-kanban">27</span>
+                    <span>Tâches totales</span>
                 </div>
-                <div>
-                  <h5>Backend (Henriette)</h5>
-                  <ul>
-                    <li>Supabase (Auth + DB + Storage)</li>
-                    <li>PostgreSQL</li>
-                    <li>TypeScript</li>
-                    <li>Row Level Security</li>
-                  </ul>
+                <div class="stat-item-kanban">
+                    <span class="stat-number-kanban">110</span>
+                    <span>Story Points</span>
                 </div>
-              </div>
+                <div class="stat-item-kanban">
+                    <span class="stat-number-kanban">3</span>
+                    <span>Équipe</span>
+                </div>
+                <div class="stat-item-kanban">
+                    <span class="stat-number-kanban">12</span>
+                    <span>Semaines estimées</span>
+                </div>
             </div>
-          </div>
 
-          <!-- Slide 5 -->
-          <div class="slide">
-            <h3>🚀 Slide 5 - Prochaines étapes</h3>
-            <div class="slide-content">
-              <h4>Cette semaine (à valider avec toi) :</h4>
-              <ol>
-                <li>
-                  <strong>Validation finale spécifications</strong> - 1h réunion
-                  équipe
-                </li>
-                <li>
-                  <strong>Setup infrastructure</strong> - Henriette (1 jour)
-                </li>
-                <li>
-                  <strong>Démarrage Sprint 1</strong> - Landing + Auth (P1)
-                </li>
-              </ol>
-              <div class="next-steps-objective">
-                <strong>🎯 Objectif :</strong> Premier workflow fonctionnel fin
-                Sprint 1 (2 semaines)
-              </div>
+            <div class="filter-controls">
+                <span>Filtrer par :</span>
+                <button class="filter-btn active" onclick="filterCards('all')">Toutes</button>
+                <button class="filter-btn" onclick="filterCards('p1')">P1</button>
+                <button class="filter-btn" onclick="filterCards('p2')">P2</button>
+                <button class="filter-btn" onclick="filterCards('p3')">P3</button>
+                <button class="filter-btn" onclick="filterCards('front')">Front-End</button>
+                <button class="filter-btn" onclick="filterCards('back')">Back-End</button>
             </div>
-          </div>
-        </div>
 
-        <div class="questions-section">
-          <h3>Questions / Validations nécessaires ?</h3>
-          <p>Tous les documents détaillés sont disponibles dans ce portail</p>
-          <p>
-            <em>Tableau Kanban • Spécifications techniques • Guide veille</em>
-          </p>
-        </div>
-      </section>
+            <div class="kanban-board-full">
+                <!-- Colonne À faire -->
+                <div class="column-kanban">
+                    <div class="column-header">
+                        <div class="column-title">
+                            📋 À faire
+                        </div>
+                        <div class="column-count">27</div>
+                    </div>
+
+                    <!-- Landing non connectée -->
+                    <div class="card-kanban" data-priority="p1" data-type="front">
+                        <div class="card-title-kanban">Landing non connectée</div>
+                        <div class="card-meta">
+                            <span class="story-points">5 pts</span>
+                            <span class="assignee">Thomas</span>
+                            <span class="epic">Landing</span>
+                            <span class="priority p1">P1</span>
+                        </div>
+                        <div class="card-description">
+                            Intégrer le design complet de la page d'accueil avec les 3 sections obligatoires selon les critères de succès de la user story
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">Supabase</span>
+                        </div>
+                    </div>
+
+                    <!-- Modale de connexion -->
+                    <div class="card-kanban" data-priority="p1" data-type="front">
+                        <div class="card-title-kanban">Développer la modale de connexion</div>
+                        <div class="card-meta">
+                            <span class="story-points">5 pts</span>
+                            <span class="assignee">Thomas</span>
+                            <span class="epic">Connexion</span>
+                            <span class="priority p1">P1</span>
+                        </div>
+                        <div class="card-description">
+                            Créer la modale de connexion avec validation email et système d'authentification magique selon spécifications
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React Modal</span>
+                            <span class="tech-tag">React Hook Form</span>
+                            <span class="tech-tag">Supabase Auth</span>
+                        </div>
+                    </div>
+
+                    <!-- Interface gestion des catégories -->
+                    <div class="card-kanban" data-priority="p1" data-type="front">
+                        <div class="card-title-kanban">Interface gestion des catégories de plats</div>
+                        <div class="card-meta">
+                            <span class="story-points">5 pts</span>
+                            <span class="assignee">Thomas</span>
+                            <span class="epic">Création de menu</span>
+                            <span class="priority p1">P1</span>
+                        </div>
+                        <div class="card-description">
+                            Développer l'interface pour créer et gérer les catégories de menu avec modale dédiée selon user story
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">React DnD</span>
+                            <span class="tech-tag">Zustand</span>
+                        </div>
+                    </div>
+
+                    <!-- Formulaire de création de plats -->
+                    <div class="card-kanban" data-priority="p1" data-type="front">
+                        <div class="card-title-kanban">Formulaire de création de plats</div>
+                        <div class="card-meta">
+                            <span class="story-points">8 pts</span>
+                            <span class="assignee">Thomas</span>
+                            <span class="epic">Création de menu</span>
+                            <span class="priority p1">P1</span>
+                        </div>
+                        <div class="card-description">
+                            Créer la modale complète pour saisir les plats d'une catégorie avec toutes les fonctionnalités requises
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React Hook Form</span>
+                            <span class="tech-tag">Supabase Storage</span>
+                            <span class="tech-tag">Zod</span>
+                        </div>
+                    </div>
+
+                    <!-- Interface personnalisation design -->
+                    <div class="card-kanban" data-priority="p1" data-type="front">
+                        <div class="card-title-kanban">Interface personnalisation design menu</div>
+                        <div class="card-meta">
+                            <span class="story-points">8 pts</span>
+                            <span class="assignee">Thomas</span>
+                            <span class="epic">Création de menu</span>
+                            <span class="priority p1">P1</span>
+                        </div>
+                        <div class="card-description">
+                            Développer le panneau de personnalisation avec preview temps réel selon critères user story
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">CSS Variables</span>
+                        </div>
+                    </div>
+
+                    <!-- Générateur d'export PDF -->
+                    <div class="card-kanban" data-priority="p1" data-type="front">
+                        <div class="card-title-kanban">Générateur d'export PDF</div>
+                        <div class="card-meta">
+                            <span class="story-points">8 pts</span>
+                            <span class="assignee">Thomas</span>
+                            <span class="epic">Création de menu</span>
+                            <span class="priority p1">P1</span>
+                        </div>
+                        <div class="card-description">
+                            Implémenter la génération PDF en un clic avec respect de la personnalisation utilisateur
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React-PDF</span>
+                            <span class="tech-tag">Canvas API</span>
+                        </div>
+                    </div>
+
+                    <!-- Interface gestion menus précédents -->
+                    <div class="card-kanban" data-priority="p1" data-type="front">
+                        <div class="card-title-kanban">Interface gestion menus précédents</div>
+                        <div class="card-meta">
+                            <span class="story-points">6 pts</span>
+                            <span class="assignee">Thomas</span>
+                            <span class="epic">Back Office</span>
+                            <span class="priority p1">P1</span>
+                        </div>
+                        <div class="card-description">
+                            Créer la page "Mes menus" avec toutes les fonctionnalités de gestion selon user story
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React Query</span>
+                            <span class="tech-tag">React Router</span>
+                        </div>
+                    </div>
+
+                    <!-- Système d'authentification par email -->
+                    <div class="card-kanban" data-priority="p1" data-type="back">
+                        <div class="card-title-kanban">Système d'authentification par email</div>
+                        <div class="card-meta">
+                            <span class="story-points">6 pts</span>
+                            <span class="assignee">Henriette</span>
+                            <span class="epic">Connexion</span>
+                            <span class="priority p1">P1</span>
+                        </div>
+                        <div class="card-description">
+                            Implémenter le système d'authentification automatique par email magique selon spécifications
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Supabase Auth</span>
+                            <span class="tech-tag">JWT</span>
+                        </div>
+                    </div>
+
+                    <!-- API création et stockage des plats -->
+                    <div class="card-kanban" data-priority="p1" data-type="back">
+                        <div class="card-title-kanban">API création et stockage des plats</div>
+                        <div class="card-meta">
+                            <span class="story-points">6 pts</span>
+                            <span class="assignee">Henriette</span>
+                            <span class="epic">Création de menu</span>
+                            <span class="priority p1">P1</span>
+                        </div>
+                        <div class="card-description">
+                            Implémenter l'API complète pour gestion plats avec stockage optimisé des images
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Supabase Storage</span>
+                            <span class="tech-tag">TypeScript</span>
+                        </div>
+                    </div>
+
+                    <!-- API préférences de personnalisation -->
+                    <div class="card-kanban" data-priority="p1" data-type="back">
+                        <div class="card-title-kanban">API préférences de personnalisation</div>
+                        <div class="card-meta">
+                            <span class="story-points">3 pts</span>
+                            <span class="assignee">Henriette</span>
+                            <span class="epic">Création de menu</span>
+                            <span class="priority p1">P1</span>
+                        </div>
+                        <div class="card-description">
+                            Créer l'API pour sauvegarde et récupération préférences design par utilisateur
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">PostgreSQL JSON</span>
+                            <span class="tech-tag">Row Level Security</span>
+                        </div>
+                    </div>
+
+                    <!-- Intégration back-office impression -->
+                    <div class="card-kanban" data-priority="p1" data-type="back">
+                        <div class="card-title-kanban">Intégration back-office impression Qwenta</div>
+                        <div class="card-meta">
+                            <span class="story-points">5 pts</span>
+                            <span class="assignee">Henriette</span>
+                            <span class="epic">Back Office</span>
+                            <span class="priority p1">P1</span>
+                        </div>
+                        <div class="card-description">
+                            Développer l'intégration avec le back-office Qwenta pour commandes d'impression
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">APIs externes</span>
+                            <span class="tech-tag">HTTPS</span>
+                        </div>
+                    </div>
+
+                    <!-- API historique et gestion des menus -->
+                    <div class="card-kanban" data-priority="p1" data-type="back">
+                        <div class="card-title-kanban">API historique et gestion des menus</div>
+                        <div class="card-meta">
+                            <span class="story-points">4 pts</span>
+                            <span class="assignee">Henriette</span>
+                            <span class="epic">Back Office</span>
+                            <span class="priority p1">P1</span>
+                        </div>
+                        <div class="card-description">
+                            Créer l'API complète pour gestion historique avec métadonnées et actions CRUD
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Supabase</span>
+                            <span class="tech-tag">Pagination</span>
+                        </div>
+                    </div>
+
+                    <!-- Interface mentions légales -->
+                    <div class="card-kanban" data-priority="p2" data-type="front">
+                        <div class="card-title-kanban">Interface mentions légales et footer</div>
+                        <div class="card-meta">
+                            <span class="story-points">3 pts</span>
+                            <span class="assignee">Thomas</span>
+                            <span class="epic">Landing</span>
+                            <span class="priority p2">P2</span>
+                        </div>
+                        <div class="card-description">
+                            Implémenter la modale mentions légales accessible depuis toutes les pages
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React Modal</span>
+                            <span class="tech-tag">Layout global</span>
+                        </div>
+                    </div>
+
+                    <!-- Dashboard principal -->
+                    <div class="card-kanban" data-priority="p2" data-type="front">
+                        <div class="card-title-kanban">Dashboard principal avec articles blog</div>
+                        <div class="card-meta">
+                            <span class="story-points">6 pts</span>
+                            <span class="assignee">Thomas</span>
+                            <span class="epic">Dashboard</span>
+                            <span class="priority p2">P2</span>
+                        </div>
+                        <div class="card-description">
+                            Créer le dashboard principal regroupant toutes les actions et articles blog Qwenta
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React Query</span>
+                            <span class="tech-tag">API blog Qwenta</span>
+                        </div>
+                    </div>
+
+                    <!-- Interface page tarifs -->
+                    <div class="card-kanban" data-priority="p2" data-type="front">
+                        <div class="card-title-kanban">Interface page tarifs</div>
+                        <div class="card-meta">
+                            <span class="story-points">1 pts</span>
+                            <span class="assignee">Thomas</span>
+                            <span class="epic">Landing</span>
+                            <span class="priority p2">P2</span>
+                        </div>
+                        <div class="card-description">
+                            Implémenter l'onglet Tarifs avec redirection vers la page Qwenta dédiée MenuMaker
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React Router</span>
+                            <span class="tech-tag">target="_blank"</span>
+                        </div>
+                    </div>
+
+                    <!-- Interface de déconnexion -->
+                    <div class="card-kanban" data-priority="p2" data-type="front">
+                        <div class="card-title-kanban">Interface de déconnexion globale</div>
+                        <div class="card-meta">
+                            <span class="story-points">2 pts</span>
+                            <span class="assignee">Thomas</span>
+                            <span class="epic">Connexion</span>
+                            <span class="priority p2">P2</span>
+                        </div>
+                        <div class="card-description">
+                            Implémenter la possibilité de déconnexion depuis n'importe quelle page connectée
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Zustand</span>
+                            <span class="tech-tag">Supabase Auth</span>
+                        </div>
+                    </div>
+
+                    <!-- Interface gestion informations utilisateur -->
+                    <div class="card-kanban" data-priority="p2" data-type="front">
+                        <div class="card-title-kanban">Interface gestion informations utilisateur</div>
+                        <div class="card-meta">
+                            <span class="story-points">4 pts</span>
+                            <span class="assignee">Thomas</span>
+                            <span class="epic">Profil utilisateur</span>
+                            <span class="priority p2">P2</span>
+                        </div>
+                        <div class="card-description">
+                            Créer l'interface de gestion du profil utilisateur avec emails multiples
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React Hook Form</span>
+                            <span class="tech-tag">Zod</span>
+                        </div>
+                    </div>
+
+                    <!-- API intégration Deliveroo -->
+                    <div class="card-kanban" data-priority="p2" data-type="back">
+                        <div class="card-title-kanban">API intégration Deliveroo</div>
+                        <div class="card-meta">
+                            <span class="story-points">8 pts</span>
+                            <span class="assignee">Henriette</span>
+                            <span class="epic">Création de menu</span>
+                            <span class="priority p2">P2</span>
+                        </div>
+                        <div class="card-description">
+                            Développer l'intégration complète avec l'API Deliveroo Partner pour diffusion menus
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">API Deliveroo Partner</span>
+                            <span class="tech-tag">OAuth</span>
+                        </div>
+                    </div>
+
+                    <!-- API génération images Instagram -->
+                    <div class="card-kanban" data-priority="p2" data-type="back">
+                        <div class="card-title-kanban">API génération images Instagram</div>
+                        <div class="card-meta">
+                            <span class="story-points">6 pts</span>
+                            <span class="assignee">Henriette</span>
+                            <span class="epic">Création de menu</span>
+                            <span class="priority p2">P2</span>
+                        </div>
+                        <div class="card-description">
+                            Créer le système de génération automatique d'images format Instagram
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Canvas/Sharp</span>
+                            <span class="tech-tag">Instagram API</span>
+                        </div>
+                    </div>
+
+                    <!-- Gestion emails multiples -->
+                    <div class="card-kanban" data-priority="p2" data-type="back">
+                        <div class="card-title-kanban">Gestion emails multiples utilisateur</div>
+                        <div class="card-meta">
+                            <span class="story-points">4 pts</span>
+                            <span class="assignee">Henriette</span>
+                            <span class="epic">Profil utilisateur</span>
+                            <span class="priority p2">P2</span>
+                        </div>
+                        <div class="card-description">
+                            Développer le système de gestion emails multiples par compte utilisateur
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Supabase Auth étendu</span>
+                        </div>
+                    </div>
+
+                    <!-- Déconnexion et gestion sessions -->
+                    <div class="card-kanban" data-priority="p2" data-type="back">
+                        <div class="card-title-kanban">Déconnexion et gestion sessions</div>
+                        <div class="card-meta">
+                            <span class="story-points">2 pts</span>
+                            <span class="assignee">Henriette</span>
+                            <span class="epic">Connexion</span>
+                            <span class="priority p2">P2</span>
+                        </div>
+                        <div class="card-description">
+                            Gérer la déconnexion sécurisée et invalidation des sessions utilisateur
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">JWT blacklisting</span>
+                            <span class="tech-tag">Session management</span>
+                        </div>
+                    </div>
+
+                    <!-- Configuration infrastructure -->
+                    <div class="card-kanban" data-priority="p2" data-type="devops">
+                        <div class="card-title-kanban">Configuration infrastructure et déploiement</div>
+                        <div class="card-meta">
+                            <span class="story-points">3 pts</span>
+                            <span class="assignee">Thomas + Henriette</span>
+                            <span class="epic">Infrastructure</span>
+                            <span class="priority p2">P2</span>
+                        </div>
+                        <div class="card-description">
+                            Configurer l'infrastructure complète selon préconisations du document technique
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Vercel</span>
+                            <span class="tech-tag">Supabase</span>
+                            <span class="tech-tag">GitHub Actions</span>
+                        </div>
+                    </div>
+
+                    <!-- Interface branding restaurateur -->
+                    <div class="card-kanban" data-priority="p3" data-type="front">
+                        <div class="card-title-kanban">Interface branding restaurateur</div>
+                        <div class="card-meta">
+                            <span class="story-points">5 pts</span>
+                            <span class="assignee">Thomas</span>
+                            <span class="epic">Branding</span>
+                            <span class="priority p3">P3</span>
+                        </div>
+                        <div class="card-description">
+                            Créer l'interface complète de personnalisation de l'identité visuelle du restaurant
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Color picker</span>
+                            <span class="tech-tag">CSS variables</span>
+                        </div>
+                    </div>
+
+                    <!-- Gestion branding restaurant -->
+                    <div class="card-kanban" data-priority="p3" data-type="back">
+                        <div class="card-title-kanban">Gestion branding restaurant</div>
+                        <div class="card-meta">
+                            <span class="story-points">3 pts</span>
+                            <span class="assignee">Henriette</span>
+                            <span class="epic">Branding</span>
+                            <span class="priority p3">P3</span>
+                        </div>
+                        <div class="card-description">
+                            Développer l'API de stockage et gestion de l'identité visuelle par restaurant
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">JSON fields</span>
+                        </div>
+                    </div>
+
+                    <!-- Tests et validation finale -->
+                    <div class="card-kanban" data-priority="p3" data-type="po">
+                        <div class="card-title-kanban">Tests et validation finale projet</div>
+                        <div class="card-meta">
+                            <span class="story-points">5 pts</span>
+                            <span class="assignee">Soufiane</span>
+                            <span class="epic">Validation</span>
+                            <span class="priority p3">P3</span>
+                        </div>
+                        <div class="card-description">
+                            Validation complète de tous les workflows utilisateur selon critères d'évaluation
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Tests fonctionnels</span>
+                            <span class="tech-tag">Tests d'acceptation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="summary-section">
+                <h3 style="text-align: center; margin-bottom: 20px;">📊 Résumé du Projet</h3>
+                
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <h4>Thomas (Front-End)</h4>
+                        <div style="font-size: 1.5rem; font-weight: bold; color: #2196F3;">68 pts</div>
+                        <div>15 tâches</div>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <h4>Henriette (Back-End)</h4>
+                        <div style="font-size: 1.5rem; font-weight: bold; color: #4CAF50;">43 pts</div>
+                        <div>10 tâches</div>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <h4>Collaboration</h4>
+                        <div style="font-size: 1.5rem; font-weight: bold; color: #FF9800;">3 pts</div>
+                        <div>1 tâche DevOps</div>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <h4>Product Owner</h4>
+                        <div style="font-size: 1.5rem; font-weight: bold; color: #9C27B0;">5 pts</div>
+                        <div>1 tâche validation</div>
+                    </div>
+                </div>
+
+                <div class="estimation-global">
+                    <h4>🎯 Estimation Globale</h4>
+                    <p><strong>12 semaines</strong> (3 mois) incluant 10 semaines de développement + 2 semaines de buffer</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spécifications Techniques -->
+        <section id="specs" class="section">
+            <h2>⚙️ Spécifications Techniques</h2>
+            <p class="doc-metadata"><strong>Version 1.0</strong> - Thomas Sifferlé - 08/09/25 - Approuvé par Soufiane</p>
+
+            <h3>I. Choix technologiques</h3>
+            <p><strong>État des lieux des besoins fonctionnels et de leurs solutions techniques :</strong></p>
+            
+            <div class="tech-requirements-table">
+                <table class="tech-table">
+                    <thead>
+                        <tr>
+                            <th>Besoin</th>
+                            <th>Contraintes</th>
+                            <th>Solution</th>
+                            <th>Description de la solution</th>
+                            <th>Justification (2 arguments)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Interface utilisateur dynamique</td>
+                            <td>Interface moderne et réactive<br>Compatible avec les maquettes Figma<br>Gestion d'état complexe</td>
+                            <td>React.js + Tailwind CSS</td>
+                            <td>Framework JavaScript pour créer des interfaces utilisateur composants, couplé à un framework CSS utility-first pour un design cohérent et responsive.</td>
+                            <td>1) React est imposé par les spécifications et offre une excellente réactivité pour les interfaces dynamiques<br>2) Tailwind CSS assure une cohérence visuelle et accélère le développement avec ses classes utilitaires.</td>
+                        </tr>
+                        <tr>
+                            <td>Drag & Drop des éléments de menu</td>
+                            <td>- Réorganisation intuitive des plats<br>- Expérience utilisateur fluide<br>- Compatible React</td>
+                            <td>@hello-pangea/dnd</td>
+                            <td>Bibliothèque React spécialisée dans les interactions drag-and-drop avec gestion des états et animations.</td>
+                            <td>1) Bibliothèque mature et performante, parfaitement intégrée à l'écosystème React.<br>2) Gestion native des états de glisser-déposer et excellente accessibilité.</td>
+                        </tr>
+                        <tr>
+                            <td>Gestion des formulaires</td>
+                            <td>- Validation en temps réel<br>- Performance optimisée<br>- UX fluide</td>
+                            <td>React Hook Form + Zod</td>
+                            <td>React Hook Form pour la gestion performante des formulaires, Zod pour la validation des schémas de données.</td>
+                            <td>1) React Hook Form minimise les re-rendus et améliore les performances.<br>2) Zod assure une validation TypeScript-native cohérente frontend/backend.</td>
+                        </tr>
+                        <tr>
+                            <td>Gestion d'état global</td>
+                            <td>- État partagé entre composants<br>- Gestion du cache API<br>- Synchronisation données</td>
+                            <td>React Query + Zustand</td>
+                            <td>React Query pour la gestion du cache et synchronisation serveur, Zustand pour l'état local global simple.</td>
+                            <td>1) React Query optimise automatiquement les requêtes et gère le cache intelligemment.<br>2) Zustand offre une API simple sans boilerplate pour l'état global.</td>
+                        </tr>
+                        <tr>
+                            <td>Authentification utilisateur</td>
+                            <td>- Sécurité robuste<br>- Gestion des sessions<br>- Magic Link – email only</td>
+                            <td>Supabase Auth</td>
+                            <td>Service d'authentification complet avec gestion des sessions, OAuth, et sécurité intégrée.</td>
+                            <td>1) Solution clé en main avec toutes les fonctionnalités d'auth (signup, login, reset, etc.).<br>2) Sécurité enterprise-grade avec JWT et sessions automatiques.</td>
+                        </tr>
+                        <tr>
+                            <td>Base de données</td>
+                            <td>- Relationnel pour menus/plats<br>- Performances optimales<br>- Sécurité avancée</td>
+                            <td>PostgreSQL via Supabase</td>
+                            <td>Base de données relationnelle hébergée avec Row Level Security et API REST auto-générée.</td>
+                            <td>1) PostgreSQL est performant pour les données relationnelles complexes (menus → catégories → plats).<br>2) Supabase génère automatiquement une API REST sécurisée avec RLS.</td>
+                        </tr>
+                        <tr>
+                            <td>Stockage des fichiers</td>
+                            <td>- Upload logos restaurants<br>- Images de plats<br>- Sécurité uploads</td>
+                            <td>Supabase Storage</td>
+                            <td>Service de stockage avec validation MIME, redimensionnement automatique et CDN intégré.</td>
+                            <td>1) Intégration native avec l'authentification Supabase (sécurité par utilisateur).<br>2) Validation automatique des types de fichiers et optimisation images.</td>
+                        </tr>
+                        <tr>
+                            <td>Génération PDF</td>
+                            <td>- Export haute qualité<br>- Personnalisation design<br>- Performance</td>
+                            <td>React-PDF</td>
+                            <td>Bibliothèque React pour générer des PDFs programmatiquement avec contrôle total du layout.</td>
+                            <td>1) Rendu cohérent avec l'interface React, même logique de composants.<br>2) Contrôle précis de la mise en page pour respecter le design des menus</td>
+                        </tr>
+                        <tr>
+                            <td>Intégrations externes Diffusion des menus et export</td>
+                            <td>- Paiement sécurisé<br>- Partage Instagram<br>- Export Deliveroo</td>
+                            <td>Stripe + Instagram API + Deliveroo API</td>
+                            <td>- Stripe pour les paiements d'impression<br>- Instagram Basic Display API pour le partage<br>- API Deliveroo Partner</td>
+                            <td>1) Stripe est la référence pour les paiements en ligne avec excellente UX.<br>2) APIs officielles pour garantir la compatibilité long terme.</td>
+                        </tr>
+                        <tr>
+                            <td>Hébergement frontend</td>
+                            <td>- Déploiement automatique<br>- Performance globale<br>- Domaine custom</td>
+                            <td>Vercel</td>
+                            <td>Plateforme d'hébergement optimisée pour React avec CI/CD automatique et CDN mondial.</td>
+                            <td>1) Intégration native avec React et GitHub pour déploiements automatiques.<br>2) CDN global et optimisations automatiques (lazy loading, compression).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>II. Liens avec le back-end</h3>
+            <div class="spec-section">
+                <h4>Langage serveur</h4>
+                <p><strong>Supabase (PostgreSQL + Edge Functions)</strong></p>
+                <ul>
+                    <li>Backend-as-a-Service avec PostgreSQL comme base de données</li>
+                    <li>Edge Functions en TypeScript pour la logique métier complexe</li>
+                    <li>API REST auto-générée avec authentification intégrée</li>
+                </ul>
+
+                <h4>API choisie</h4>
+                <p><strong>API REST Supabase + APIs externes</strong></p>
+                <ul>
+                    <li>API REST automatique générée par Supabase à partir du schéma PostgreSQL</li>
+                    <li>APIs externes : Stripe (paiements), Instagram (partage), Deliveroo (export)</li>
+                    <li>Real-time subscriptions pour les mises à jour en temps réel</li>
+                </ul>
+
+                <h4>Base de données</h4>
+                <p><strong>PostgreSQL (via Supabase)</strong></p>
+                <ul>
+                    <li>Base relationnelle pour gérer les relations complexes (restaurants → menus → catégories → plats)</li>
+                    <li>Row Level Security (RLS) pour la sécurité au niveau utilisateur</li>
+                    <li>Performances optimisées avec indexation automatique</li>
+                </ul>
+            </div>
+
+            <h3>III. Préconisations concernant le domaine et l'hébergement</h3>
+            <div class="spec-section">
+                <h4>Nom de domaine</h4>
+                <ul>
+                    <li><strong>menu.qwenta.fr</strong> (sous-domaine Qwenta)</li>
+                    <li>Cohérence avec l'écosystème Qwenta</li>
+                    <li>SSL automatique via Vercel</li>
+                </ul>
+
+                <h4>Hébergement</h4>
+                <ul>
+                    <li><strong>Frontend</strong> : Vercel (CDN mondial, déploiements automatiques)</li>
+                    <li><strong>Backend/DB</strong> : Supabase (infrastructure européenne RGPD-compliant)</li>
+                    <li><strong>CDN</strong> : Intégré Vercel + Supabase pour optimisations globales</li>
+                </ul>
+
+                <h4>Adresses e-mail</h4>
+                <ul>
+                    <li><strong>Notifications</strong> : Via Supabase Auth (reset password, confirmations)</li>
+                    <li><strong>Support</strong> : Intégration possible avec le système e-mail Qwenta</li>
+                </ul>
+            </div>
+
+            <h3>IV. Accessibilité</h3>
+            <div class="spec-section">
+                <h4>Compatibilité navigateur</h4>
+                <ul>
+                    <li><strong>Chrome</strong> : Dernières 2 versions</li>
+                    <li><strong>Safari</strong> : Dernières 2 versions</li>
+                    <li><strong>Firefox</strong> : Dernières 2 versions</li>
+                    <li>Support JavaScript ES2020+ requis</li>
+                </ul>
+
+                <h4>Types d'appareils</h4>
+                <ul>
+                    <li><strong>Desktop uniquement</strong> (selon spécifications)</li>
+                    <li>Résolution minimum : 1280×720px</li>
+                    <li>Navigation clavier complète</li>
+                    <li>Compatible lecteurs d'écran (ARIA labels)</li>
+                </ul>
+            </div>
+
+            <h3>V. Recommandations en termes de sécurité</h3>
+            <div class="spec-section">
+                <h4>Sécurité des accès</h4>
+                <ul>
+                    <li><strong>Authentification</strong> : JWT via Supabase Auth avec refresh tokens</li>
+                    <li><strong>Sessions</strong> : Expiration automatique et renouvellement sécurisé</li>
+                    <li><strong>HTTPS</strong> : Obligatoire sur toutes les communications</li>
+                </ul>
+
+                <h4>Sécurité des données</h4>
+                <ul>
+                    <li><strong>Validation</strong> : Zod pour validation frontend/backend cohérente</li>
+                    <li><strong>RLS</strong> : Row Level Security PostgreSQL pour isolation des données</li>
+                    <li><strong>Upload</strong> : Validation MIME types et taille des fichiers</li>
+                </ul>
+
+                <h4>Protection RGPD</h4>
+                <ul>
+                    <li><strong>Consentement</strong> : Gestion des cookies via Vercel Analytics</li>
+                    <li><strong>Données</strong> : Hébergement EU (Supabase région européenne)</li>
+                    <li><strong>Suppression</strong> : Outils Supabase pour right-to-be-forgotten</li>
+                </ul>
+            </div>
+
+            <h3>VI. Maintenance du site et futures mises à jour</h3>
+            <div class="spec-section">
+                <h4>Stratégie de maintenance</h4>
+                <ul>
+                    <li><strong>Monitoring</strong> : Supabase Dashboard pour surveillance temps réel</li>
+                    <li><strong>Logs</strong> : Centralisés via Vercel Analytics et Supabase</li>
+                    <li><strong>Backups</strong> : Automatiques via Supabase (point-in-time recovery)</li>
+                </ul>
+
+                <h4>Mises à jour et évolutions</h4>
+                <ul>
+                    <li><strong>CI/CD</strong> : GitHub Actions pour tests automatiques + déploiement Vercel</li>
+                    <li><strong>Versioning</strong> : Git flow avec branches de feature et review code</li>
+                    <li><strong>Rollback</strong> : Rollback instantané via Vercel Dashboard</li>
+                </ul>
+
+                <h4>Montée en charge</h4>
+                <ul>
+                    <li><strong>Auto-scaling</strong> : Automatique via Supabase et Vercel</li>
+                    <li><strong>Cache</strong> : React Query côté client + CDN Vercel</li>
+                    <li><strong>Optimisations</strong> : Code splitting React + lazy loading automatique</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Veille Technologique -->
+        <section id="veille" class="section">
+            <h2>🔍 Présentation de l'outil de veille technique - WAKELET</h2>
+            
+            <div class="wakelet-header">
+                <img src="/img/wakelet-hero.jpg" alt="Menu Maker By Qwenta - Présentation Wakelet" class="wakelet-hero-image">
+                <p class="wakelet-subtitle">Menu Maker By Qwenta - Présentation de l'outil de veille technique <strong>WAKELET</strong></p>
+            </div>
+
+            <h3>Pourquoi faire une veille technique ?</h3>
+            
+            <div class="why-veille-grid">
+                <div class="why-card">
+                    <div class="why-number">1</div>
+                    <h4>Suivre l'évolution rapide des technologies</h4>
+                    <p>Le web évolue constamment : <strong>nouveaux frameworks</strong>, mises à jour de librairies, bonnes pratiques qui changent. La veille permet de rester à jour et d'éviter d'utiliser des solutions obsolètes.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-number">2</div>
+                    <h4>Améliorer la qualité et la pertinence de ses projets</h4>
+                    <p>En découvrant régulièrement de <strong>nouveaux outils</strong>, approches ou retours d'expérience, on peut optimiser son code, renforcer l'accessibilité, la performance et la sécurité de ses applications.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-number">3</div>
+                    <h4>Prévenir les risques de sécurité et de maintenance</h4>
+                    <p>Une veille partagée détecte tôt les <strong>vulnérabilités</strong> (zero-day) ou les librairies abandonnées, ce qui permet d'appliquer des correctifs, de restreindre les déploiements ou de planifier une migration avant qu'un incident coûteux n'arrive.</p>
+                </div>
+            </div>
+
+            <h3>Choix de l'outil de veille</h3>
+            
+            <div class="wakelet-choice-section">
+                <div class="wakelet-logo-section">
+                    <img src="/img/wakelet-logo.png" alt="Logo Wakelet" class="wakelet-logo">
+                    <h4>Wakelet</h4>
+                </div>
+                
+                <div class="wakelet-advantages">
+                    <div class="advantage-item">
+                        <strong>Sélectivité et pertinence des contenus :</strong> contrairement à un agrégateur RSS brut comme Feedly qui oblige à trier beaucoup de bruit, Wakelet me permet de rassembler uniquement des ressources que j'ai jugées utiles pour ma stack (documentation officielle, tutoriels, articles ciblés). Cela garantit que ma veille est directement exploitable pour mes projets.
+                    </div>
+                    
+                    <div class="advantage-item">
+                        <strong>Centralisation multi-sources :</strong> Wakelet me sert de hub unique où je regroupe plusieurs formats et canaux (articles, docs, vidéos, RSS). Pour compléter, j'y ai intégré une colonne RSS personnalisée (via Reddit.rss et Rss.app), ce qui combine la flexibilité des flux automatisés avec la curation manuelle.<br>
+                        <strong>Résultat :</strong> une veille à la fois organisée et complète.
+                    </div>
+                </div>
+                
+                <div class="wakelet-links">
+                    <div class="wakelet-link-item">
+                        <strong>Liens vers la veille ressources de dev :</strong><br>
+                        <a href="https://wakelet.com/wake/gfUWsJhx__7de1gSmU-CM" target="_blank">https://wakelet.com/wake/gfUWsJhx__7de1gSmU-CM</a>
+                    </div>
+                    
+                    <div class="wakelet-link-item">
+                        <strong>Lien vers la veille développement web général :</strong><br>
+                        <a href="https://wakelet.com/wake/vp9NOkwrXayMADkxdA7sx" target="_blank">https://wakelet.com/wake/vp9NOkwrXayMADkxdA7sx</a>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Choix des ressources</h3>
+            
+            <div class="resources-section">
+                <h4>1. Ressources de développement (stack technique)</h4>
+                
+                <div class="resource-subsection">
+                    <h5>Carte mentale</h5>
+                    <img src="/img/carte-mentale-stack.png" alt="Carte mentale ressources stack technique" class="resource-image">
+                    
+                    <h5>Exemples</h5>
+                    <img src="/img/exemples-stack.png" alt="Exemples ressources stack technique" class="resource-image">
+                </div>
+
+                <h4>2. Ressources de développement web général (veille globale)</h4>
+                
+                <div class="resource-subsection">
+                    <h5>Carte mentale</h5>
+                    <img src="/img/carte-mentale-generale.png" alt="Carte mentale développement web général" class="resource-image">
+                    
+                    <h5>Exemples</h5>
+                    <img src="/img/exemples-generale.png" alt="Exemples développement web général" class="resource-image">
+                </div>
+            </div>
+
+            <h3>Flux RSS automatisés intégrés</h3>
+            
+            <div class="rss-section">
+                <div class="rss-summary">
+                    <div class="rss-item">
+                        <strong>Flux Reddit multi-subreddit personnalisé :</strong>
+                        <ul>
+                            <li>8 communautés techniques ciblées Menu Maker</li>
+                            <li>webdev, reactjs, node, stripe, tailwindcss, supabase, vercel, react</li>
+                            <li>Discussions et solutions en temps réel</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="rss-item">
+                        <strong>Sites transformés via RSS.app :</strong>
+                        <ul>
+                            <li>Blogs officiels sans flux RSS natif</li>
+                            <li>Actualités techniques automatisées</li>
+                            <li>Mises à jour des technologies du projet</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="rss-item">
+                        <strong>Approche hybride :</strong>
+                        <ul>
+                            <li>Curation manuelle = sélectivité et pertinence</li>
+                            <li>Flux automatisés = réactivité et actualités</li>
+                            <li>Combinaison optimale sans surcharge</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="rss-item">
+                        <strong>Résultat :</strong>
+                        <ul>
+                            <li>90 ressources totales</li>
+                            <li>Veille organisée ET dynamique</li>
+                            <li>Couverture complète du stack technique</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Utilisations et Avantages</h3>
+            
+            <div class="utilisation-section">
+                <img src="/img/utilisations-schema.png" alt="Schéma utilisations et avantages" class="utilisation-schema">
+                
+                <h4>Utilisation en entreprise :</h4>
+                
+                <div class="enterprise-usage">
+                    <div class="usage-item">
+                        <span class="usage-number">1.</span>
+                        <div class="usage-content">
+                            <strong>Outil de centralisation :</strong><br>
+                            Créer un hub de documentation qui centralise à la fois les ressources techniques et les supports pédagogiques, permettant à l'équipe d'avoir la même base de connaissances et d'être alertée simultanément lors d'un changement important.
+                        </div>
+                    </div>
+                    
+                    <div class="usage-item">
+                        <span class="usage-number">2.</span>
+                        <div class="usage-content">
+                            <strong>Outil collaboratif :</strong><br>
+                            Permettre à chaque membre d'apporter sa contribution à la veille commune, renforçant l'esprit d'équipe et créant une dynamique positive de partage des connaissances entre développeurs.
+                        </div>
+                    </div>
+                    
+                    <div class="usage-item">
+                        <span class="usage-number">3.</span>
+                        <div class="usage-content">
+                            <strong>Outil de sécurité et planification :</strong><br>
+                            Détecter rapidement les bibliothèques abandonnées ou les failles de sécurité critiques grâce à une surveillance quotidienne de quelques minutes, permettant de réagir à temps en planifiant les migrations ou corrections nécessaires.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Annexes : Export - Fichiers pdf complets</h3>
+            
+            <div class="annexes-section">
+                <a href="https://drive.google.com/file/d/184zUAB1zntp8H5man6rv2qy5tYnaiU3y/view?usp=sharing" target="_blank" class="annexe-item annexe-link">
+                    <img src="/img/pdf-export-1.png" alt="Export PDF Menu Maker #1" class="pdf-preview">
+                    <div class="annexe-content">
+                        <div class="annexe-header">
+                            <img src="/img/google-docs-icon.png" alt="Google Docs" class="docs-icon">
+                            <span class="docs-label">Google Docs</span>
+                        </div>
+                        <h5>MENU MAKER #1.pdf</h5>
+                        <p>Export en pdf de la veille – Menu Maker #1 – Ressources de dev</p>
+                        <div class="click-indicator">📄 Cliquer pour ouvrir le PDF</div>
+                    </div>
+                </a>
+                
+                <a href="https://drive.google.com/file/d/1vwrYameJmMPrefWLMGEhQ6tE5zkCUeAj/view?usp=sharing" target="_blank" class="annexe-item annexe-link">
+                    <img src="/img/pdf-export-2.png" alt="Export PDF Menu Maker #2" class="pdf-preview">
+                    <div class="annexe-content">
+                        <div class="annexe-header">
+                            <img src="/img/google-docs-icon.png" alt="Google Docs" class="docs-icon">
+                            <span class="docs-label">Google Docs</span>
+                        </div>
+                        <h5>Menu-Maker #2.pdf</h5>
+                        <p>Export en pdf de la veille – Menu Maker #2 – Développement Web Général</p>
+                        <div class="click-indicator">📄 Cliquer pour ouvrir le PDF</div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Présentation -->
+        <section id="presentation" class="section">
+            <h2>📊 Présentation pour Soufiane</h2>
+            <p class="presentation-subtitle">Support de présentation pour le retour de congés - 20 slides maximum</p>
+            
+            <div class="slides-container">
+                <!-- Slide 1 -->
+                <div class="slide">
+                    <h3>🏠 Slide 1 - Bienvenue</h3>
+                    <div class="slide-content">
+                        <h4>Bon retour Soufiane ! 👋</h4>
+                        <p><strong>Menu Maker by Qwenta</strong></p>
+                        <p>Projet préparé et planifié pendant ton absence</p>
+                        <p><em>Prêt pour le lancement du développement</em></p>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="slide">
+                    <h3>📈 Slide 2 - État d'avancement</h3>
+                    <div class="slide-content">
+                        <ul>
+                            <li>✅ <strong>Spécifications techniques complètes</strong> (15 pages)</li>
+                            <li>✅ <strong>Tableau Kanban détaillé</strong> (27 tâches, 110 story points)</li>
+                            <li>✅ <strong>Architecture validée</strong> React + Supabase</li>
+                            <li>✅ <strong>Répartition équipe</strong> Thomas (68pts) + Henriette (43pts)</li>
+                            <li>🎯 <strong>Estimation :</strong> 12 semaines (10 dev + 2 buffer)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="slide">
+                    <h3>🎯 Slide 3 - Priorités définies</h3>
+                    <div class="slide-content">
+                        <div class="priorities-grid">
+                            <div class="priority-card p1">
+                                <strong>P1 (13 tâches)</strong><br>
+                                Landing + Auth + CRUD Menu<br>
+                                <em>67 story points</em>
+                            </div>
+                            <div class="priority-card p2">
+                                <strong>P2 (12 tâches)</strong><br>
+                                Dashboard + Intégrations<br>
+                                <em>38 story points</em>
+                            </div>
+                            <div class="priority-card p3">
+                                <strong>P3 (3 tâches)</strong><br>
+                                Branding + Tests<br>
+                                <em>13 story points</em>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="slide">
+                    <h3>⚙️ Slide 4 - Choix techniques validés</h3>
+                    <div class="slide-content">
+                        <div class="tech-grid">
+                            <div>
+                                <h5>Frontend (Thomas)</h5>
+                                <ul>
+                                    <li>React.js 18</li>
+                                    <li>Tailwind CSS</li>
+                                    <li>React-PDF</li>
+                                    <li>Zustand</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5>Backend (Henriette)</h5>
+                                <ul>
+                                    <li>Supabase (Auth + DB + Storage)</li>
+                                    <li>PostgreSQL</li>
+                                    <li>TypeScript</li>
+                                    <li>Row Level Security</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 5 -->
+                <div class="slide">
+                    <h3>🚀 Slide 5 - Prochaines étapes</h3>
+                    <div class="slide-content">
+                        <h4>Cette semaine (à valider avec toi) :</h4>
+                        <ol>
+                            <li><strong>Validation finale spécifications</strong> - 1h réunion équipe</li>
+                            <li><strong>Setup infrastructure</strong> - Henriette (1 jour)</li>
+                            <li><strong>Démarrage Sprint 1</strong> - Landing + Auth (P1)</li>
+                        </ol>
+                        <div class="next-steps-objective">
+                            <strong>🎯 Objectif :</strong> Premier workflow fonctionnel fin Sprint 1 (2 semaines)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="questions-section">
+                <h3>Questions / Validations nécessaires ?</h3>
+                <p>Tous les documents détaillés sont disponibles dans ce portail</p>
+                <p><em>Tableau Kanban • Spécifications techniques • Guide veille</em></p>
+            </div>
+        </section>
     </div>
 
     <script src="script.js"></script>
-  </body>
+</body>
 </html>

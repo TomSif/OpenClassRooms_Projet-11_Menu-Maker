@@ -42,7 +42,190 @@ const PROJECT_DATA = {
     }
 };
 
-// Classe principale pour gérer l'application
+// Fonctions pour le filtrage des cartes Kanban
+function filterCards(type) {
+    const cards = document.querySelectorAll('.card-kanban');
+    const buttons = document.querySelectorAll('.filter-btn');
+    
+    // Reset active button
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+    
+    let visibleCount = 0;
+    
+    cards.forEach(card => {
+        let shouldShow = false;
+        
+        if (type === 'all') {
+            shouldShow = true;
+        } else if (type === 'front' && card.dataset.type === 'front') {
+            shouldShow = true;
+        } else if (type === 'back' && card.dataset.type === 'back') {
+            shouldShow = true;
+        } else if (type === 'devops' && card.dataset.type === 'devops') {
+            shouldShow = true;
+        } else if (type === 'po' && card.dataset.type === 'po') {
+            shouldShow = true;
+        } else if (card.dataset.priority === type) {
+            shouldShow = true;
+        }
+        
+        if (shouldShow) {
+            card.style.display = 'block';
+            visibleCount++;
+        } else {
+            card.style.display = 'none';
+        }
+    });
+    
+    // Update column count
+    updateColumnCount(visibleCount);
+}
+
+function updateColumnCount(count = null) {
+    if (count === null) {
+        const visibleCards = document.querySelectorAll('.card-kanban:not([style*="display: none"])');
+        count = visibleCards.length;
+    }
+    
+    const columnCount = document.querySelector('.column-count');
+    if (columnCount) {
+        columnCount.textContent = count;
+    }
+}
+
+// Setup des boutons expand/collapse pour les descriptions longues
+function setupExpandButtons() {
+    document.querySelectorAll('.card-description').forEach(desc => {
+        if (desc.scrollHeight > 100) {
+            const expandBtn = document.createElement('button');
+            expandBtn.textContent = 'Voir plus...';
+            expandBtn.className = 'expand-btn';
+            expandBtn.onclick = function() {
+                desc.classList.toggle('expanded');
+                expandBtn.textContent = desc.classList.contains('expanded') ? 'Voir moins' : 'Voir plus...';
+            };
+            desc.parentNode.insertBefore(expandBtn, desc.nextSibling);
+        }
+    });
+}
+
+// Fonction pour initialiser les interactions du Kanban
+function initializeKanbanInteractions() {
+    // Setup expand buttons pour les descriptions
+    setupExpandButtons();
+    
+    // Gestion des touches clavier pour l'accessibilité
+    document.addEventListener('keydown', (e) => {
+        // Navigation par touches fléchées dans les cartes Kanban
+        if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+            const focusedCard = document.activeElement;
+            if (focusedCard && focusedCard.classList.contains('card-kanban')) {
+                e.preventDefault();
+                const cards = Array.from(document.querySelectorAll('.card-kanban:not([style*="display: none"])'));
+                const currentIndex = cards.indexOf(focusedCard);
+                
+                let nextIndex;
+                if (e.key === 'ArrowDown') {
+                    nextIndex = (currentIndex + 1) % cards.length;
+                } else {
+                    nextIndex = (currentIndex - 1 + cards.length) % cards.length;
+                }
+                
+                cards[nextIndex].focus();
+            }
+        }
+        
+        // Filtres rapides par touches
+        if (e.altKey) {
+            switch(e.key) {
+                case '1':
+                    e.preventDefault();
+                    filterCards('p1');
+                    break;
+                case '2':
+                    e.preventDefault();
+                    filterCards('p2');
+                    break;
+                case '3':
+                    e.preventDefault();
+                    filterCards('p3');
+                    break;
+                case 'f':
+                    e.preventDefault();
+                    filterCards('front');
+                    break;
+                case 'b':
+                    e.preventDefault();
+                    filterCards('back');
+                    break;
+                case 'a':
+                    e.preventDefault();
+                    filterCards('all');
+                    break;
+            }
+        }
+    });
+    
+    // Rendre les cartes focusables pour l'accessibilité
+    const cards = document.querySelectorAll('.card-kanban');
+    cards.forEach((card, index) => {
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('role', 'article');
+        card.setAttribute('aria-label', `Tâche: ${card.querySelector('.card-title-kanban').textContent}`);
+        
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                // Expand/collapse la description si elle existe
+                const expandBtn = card.querySelector('.expand-btn');
+                if (expandBtn) {
+                    expandBtn.click();
+                }
+            }
+        });
+    });
+    
+    // Animation d'entrée pour les cartes
+    setTimeout(() => {
+        cards.forEach((card, index) => {
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, index * 50);
+        });
+    }, 100);
+}
+
+// Fonction pour calculer et afficher les statistiques
+function updateProjectStats() {
+    const allCards = document.querySelectorAll('.card-kanban');
+    const visibleCards = document.querySelectorAll('.card-kanban:not([style*="display: none"])');
+    
+    // Mettre à jour le compteur de tâches visible
+    const totalTasksElement = document.querySelector('.stat-number-kanban');
+    if (totalTasksElement) {
+        totalTasksElement.textContent = visibleCards.length;
+    }
+    
+    // Calculer les story points des cartes visibles
+    let totalPoints = 0;
+    visibleCards.forEach(card => {
+        const pointsElement = card.querySelector('.story-points');
+        if (pointsElement) {
+            const points = parseInt(pointsElement.textContent.replace(' pts', ''));
+            totalPoints += points;
+        }
+    });
+    
+    // Mettre à jour le compteur de story points si nécessaire
+    const statsElements = document.querySelectorAll('.stat-number-kanban');
+    if (statsElements[1]) {
+        statsElements[1].textContent = totalPoints;
+    }
+}
+
+// Extension de la classe principale pour gérer le Kanban
 class MenuMakerDocs {
     constructor() {
         this.currentSection = 'home';
@@ -140,76 +323,11 @@ class MenuMakerDocs {
     }
     
     loadKanbanContent() {
-        const kanbanContainer = document.querySelector('#kanban .kanban-embed');
-        const loadingElement = document.getElementById('kanban-loading');
-        
-        if (loadingElement) {
-            loadingElement.style.display = 'none';
-        }
-        
-        const kanbanHTML = this.generateKanbanHTML();
-        kanbanContainer.innerHTML = kanbanHTML;
-    }
-    
-    generateKanbanHTML() {
-        return `
-            <div class="kanban-board">
-                <!-- P1 Section -->
-                <div class="priority-column">
-                    <div class="priority-header p1">
-                        <span>🔥 Priorité 1 (P1) - ${PROJECT_DATA.tasks.p1.length} tâches</span>
-                        <span>${this.calculateTotalPoints('p1')} points</span>
-                    </div>
-                    <div class="tasks-grid p1">
-                        ${this.generateTaskCards('p1')}
-                    </div>
-                </div>
-                
-                <!-- P2 Section -->
-                <div class="priority-column">
-                    <div class="priority-header p2">
-                        <span>⚡ Priorité 2 (P2) - ${PROJECT_DATA.tasks.p2.length} tâches</span>
-                        <span>${this.calculateTotalPoints('p2')} points</span>
-                    </div>
-                    <div class="tasks-grid p2">
-                        ${this.generateTaskCards('p2')}
-                    </div>
-                </div>
-                
-                <!-- P3 Section -->
-                <div class="priority-column">
-                    <div class="priority-header p3">
-                        <span>📋 P3 - ${PROJECT_DATA.tasks.p3.length} tâches</span>
-                        <span>${this.calculateTotalPoints('p3')} points</span>
-                    </div>
-                    <div class="tasks-grid p3">
-                        ${this.generateTaskCards('p3')}
-                    </div>
-                </div>
-            </div>
-        `;
-    }
-    
-    calculateTotalPoints(priority) {
-        return PROJECT_DATA.tasks[priority].reduce((total, task) => total + task.points, 0);
-    }
-    
-    generateTaskCards(priority) {
-        return PROJECT_DATA.tasks[priority].map(task => {
-            const epicBadge = task.epic ? 
-                `<span class="task-badge epic">${task.epic}</span>` : '';
-                
-            return `
-                <div class="task-card ${priority}">
-                    <div class="task-title">${task.title}</div>
-                    <div class="task-badges">
-                        <span class="task-badge points">${task.points}pts</span>
-                        <span class="task-badge assignee">${task.assignee}</span>
-                        ${epicBadge}
-                    </div>
-                </div>
-            `;
-        }).join('');
+        // Initialiser les interactions Kanban
+        setTimeout(() => {
+            initializeKanbanInteractions();
+            updateProjectStats();
+        }, 100);
     }
     
     // Méthode utilitaire pour exporter les données (pour debugging)
@@ -242,6 +360,10 @@ class MenuMakerDocs {
             });
         });
         return assignees;
+    }
+    
+    calculateTotalPoints(priority) {
+        return PROJECT_DATA.tasks[priority].reduce((total, task) => total + task.points, 0);
     }
 }
 
