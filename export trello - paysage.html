@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qwenta Kanban - Menu Maker</title>
+    <style>
+        @page {
+            size: A4 landscape;
+            margin: 15mm;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: white;
+            color: #333;
+            font-size: 11px;
+            line-height: 1.3;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .header h1 {
+            font-size: 20px;
+            margin-bottom: 5px;
+            color: #667eea;
+        }
+
+        .header p {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .project-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 15px;
+            background: #f8f9fa;
+            padding: 8px;
+            border-radius: 5px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 16px;
+            font-weight: bold;
+            color: #667eea;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 10px;
+            color: #666;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section-header {
+            background: #667eea;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 12px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 8px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 10px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            page-break-inside: avoid;
+            border-left: 3px solid #667eea;
+        }
+
+        .card.p1 { border-left-color: #f44336; }
+        .card.p2 { border-left-color: #FF9800; }
+        .card.p3 { border-left-color: #4CAF50; }
+
+        .card-title {
+            font-size: 11px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.2;
+            color: #333;
+        }
+
+        .card-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 6px;
+            font-size: 9px;
+        }
+
+        .badge {
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-weight: 500;
+            font-size: 8px;
+            white-space: nowrap;
+        }
+
+        .story-points {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .assignee {
+            background: #2196F3;
+            color: white;
+        }
+
+        .epic {
+            background: #9C27B0;
+            color: white;
+        }
+
+        .priority {
+            font-weight: 600;
+        }
+
+        .priority.p1 {
+            background: #f44336;
+            color: white;
+        }
+
+        .priority.p2 {
+            background: #FF9800;
+            color: white;
+        }
+
+        .priority.p3 {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .card-description {
+            font-size: 9px;
+            line-height: 1.3;
+            color: #666;
+            margin-bottom: 6px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2px;
+            margin-top: 4px;
+        }
+
+        .tech-tag {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 1px 4px;
+            border-radius: 3px;
+            font-size: 7px;
+        }
+
+        .summary-section {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .summary-item {
+            text-align: center;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .summary-number {
+            font-size: 18px;
+            font-weight: bold;
+            color: #667eea;
+            display: block;
+        }
+
+        .summary-label {
+            font-size: 10px;
+            color: #666;
+            margin-top: 2px;
+        }
+
+        .team-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .header {
+                margin-bottom: 10px;
+            }
+            
+            .section {
+                margin-bottom: 15px;
+            }
+            
+            .cards-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 6px;
+            }
+            
+            .card {
+                padding: 8px;
+            }
+        }
+
+        /* Layout spécifique pour optimiser l'espace */
+        .priority-sections {
+            display: grid;
+            grid-template-columns: 2fr 1fr 0.5fr;
+            gap: 15px;
+        }
+
+        .p1-section .cards-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .p2-section .cards-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .p3-section .cards-grid {
+            grid-template-columns: 1fr;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Menu Maker by Qwenta - Tableau de Bord Projet</h1>
+        <p>27 tâches • 110 Story Points • Estimation: 12 semaines</p>
+    </div>
+
+    <div class="project-stats">
+        <div class="stat-item">
+            <span class="stat-number">68</span>
+            <span class="stat-label">Thomas (Front)</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">43</span>
+            <span class="stat-label">Henriette (Back)</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">3</span>
+            <span class="stat-label">DevOps</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">5</span>
+            <span class="stat-label">Validation</span>
+        </div>
+    </div>
+
+    <div class="priority-sections">
+        <!-- Section Priorité 1 -->
+        <div class="section p1-section">
+            <div class="section-header">
+                <span>🔥 Priorité 1 (P1) - 13 tâches</span>
+                <span>67 points</span>
+            </div>
+            <div class="cards-grid">
+                <div class="card p1">
+                    <div class="card-title">Landing non connectée</div>
+                    <div class="card-meta">
+                        <span class="badge story-points">5 pts</span>
+                        <span class="badge assignee">Thomas</span>
+                        <span class="badge epic">Landing</span>
+                    </div>
+                    <div class="card-description">Intégrer le design complet de la page d'accueil avec les 3 sections obligatoires</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Tailwind</span>
+                    </div>
+                </div>
+
+                <div class="card p1">
+                    <div class="card-title">Modale de connexion</div>
+                    <div class="card-meta">
+                        <span class="badge story-points">5 pts</span>
+                        <span class="badge assignee">Thomas</span>
+                        <span class="badge epic">Connexion</span>
+                    </div>
+                    <div class="card-description">Créer la modale de connexion avec validation email et authentification magique</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">React Modal</span>
+                        <span class="tech-tag">Supabase</span>
+                    </div>
+                </div>
+
+                <div class="card p1">
+                    <div class="card-title">Gestion catégories de plats</div>
+                    <div class="card-meta">
+                        <span class="badge story-points">5 pts</span>
+                        <span class="badge assignee">Thomas</span>
+                        <span class="badge epic">Menu</span>
+                    </div>
+                    <div class="card-description">Interface pour créer et gérer les catégories de menu avec modale dédiée</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">React DnD</span>
+                        <span class="tech-tag">Zustand</span>
+                    </div>
+                </div>
+
+                <div class="card p1">
+                    <div class="card-title">Formulaire création plats</div>
+                    <div class="card-meta">
+                        <span class="badge story-points">8 pts</span>
+                        <span class="badge assignee">Thomas</span>
+                        <span class="badge epic">Menu</span>
+                    </div>
+                    <div class="card-description">Modale complète pour saisir les plats avec upload photo et validation</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Hook Form</span>
+                        <span class="tech-tag">Storage</span>
+                    </div>
+                </div>
+
+                <div class="card p1">
+                    <div class="card-title">Personnalisation design menu</div>
+                    <div class="card-meta">
+                        <span class="badge story-points">8 pts</span>
+                        <span class="badge assignee">Thomas</span>
+                        <span class="badge epic">Menu</span>
+                    </div>
+                    <div class="card-description">Panneau de personnalisation avec preview temps réel des changements</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">CSS Vars</span>
+                        <span class="tech-tag">Preview</span>
+                    </div>
+                </div>
+
+                <div class="card p1">
+                    <div class="card-title">Générateur export PDF</div>
+                    <div class="card-meta">
+                        <span class="badge story-points">8 pts</span>
+                        <span class="badge assignee">Thomas</span>
+                        <span class="badge epic">Menu</span>
+                    </div>
+                    <div class="card-description">Génération PDF en un clic avec respect de la personnalisation utilisateur</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">React-PDF</span>
+                        <span class="tech-tag">Canvas</span>
+                    </div>
+                </div>
+
+                <div class="card p1">
+                    <div class="card-title">Gestion menus précédents</div>
+                    <div class="card-meta">
+                        <span class="badge story-points">6 pts</span>
+                        <span class="badge assignee">Thomas</span>
+                        <span class="badge epic">Back Office</span>
+                    </div>
+                    <div class="card-description">Page "Mes menus" avec toutes les fonctionnalités de gestion</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">React Query</span>
+                        <span class="tech-tag">Router</span>
+                    </div>
+                </div>
+
+                <div class="card p1">
+                    <div class="card-title">Authentification par email</div>
+                    <div class="card-meta">
+                        <span class="badge story-points">6 pts</span>
+                        <span class="badge assignee">Henriette</span>
+                        <span class="badge epic">Connexion</span>
+                    </div>
+                    <div class="card-description">Système d'authentification automatique par email magique</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">JWT</span>
+                    </div>
+                </div>
+
+                <div class="card p1">
+                    <div class="card-title">API création stockage plats</div>
+                    <div class="card-meta">
+                        <span class="badge story-points">6 pts</span>
+                        <span class="badge assignee">Henriette</span>
+                        <span class="badge epic">Menu</span>
+                    </div>
+                    <div class="card-description">API complète pour gestion plats avec stockage optimisé des images</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Storage</span>
+                    </div>
+                </div>
+
+                <div class="card p1">
+                    <div class="card-title">API préférences personnalisation</div>
+                    <div class="card-meta">
+                        <span class="badge story-points">3 pts</span>
+                        <span class="badge assignee">Henriette</span>
+                        <span class="badge epic">Menu</span>
+                    </div>
+                    <div class="card-description">API pour sauvegarde et récupération préférences design par utilisateur</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">JSON</span>
+                        <span class="tech-tag">RLS</span>
+                    </div>
+                </div>
+
+                <div class="card p1">
+                    <div class="card-title">Intégration back-office impression</div>
+                    <div class="card-meta">
+                        <span class="badge story-points">5 pts</span>
+                        <span class="badge assignee">Henriette</span>
+                        <span class="badge epic">Back Office</span>
+                    </div>
+                    <div class="card-description">Intégration avec le back-office Qwenta pour commandes d'impression</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">API ext</span>
+                    </div>
+                </div>
+
+                <div class="card p1">
+                    <div class="card-title">API historique gestion menus</div>
+                    <div class="card-meta">
+                        <span class="badge story-points">4 pts</span>
+                        <span class="badge assignee">Henriette</span>
+                        <span class="badge epic">Back Office</span>
+                    </div>
+                    <div class="card-description">API complète pour gestion historique avec métadonnées et actions CRUD</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Pagination</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Priorité 2 -->
+        <div class="section p2-section">
+            <div class="section-header">
+                <span>⚡ Priorité 2 (P2) - 12 tâches</span>
+                <span>38 points</span>
+            </div>
+            <div class="cards-grid">
+                <div class="card p2">
+                    <div class="card-title">Mentions légales footer</div>
+                    <div class="card-meta">
+                        <span class="badge story-points">3 pts</span>
+                        <span class="badge assignee">Thomas</span>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Modal</span>
+                    </div>
+                </div>
+
+                <div class="card p2">
+                    <div class="card-title">Dashboard principal blog</div>
+                    <div class="card-meta">
+                        <span class="badge story-points">6 pts</span>
+                        <span class="badge assignee">Thomas</span>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Query</span>
+                    </div>
+                </div>
+
+                <div class="card p2">
+                    <div class="card-title">Interface page tarifs</div>
+                    <div class="card-meta">
+                        <span class="badge story-points">1 pts</span>
+                        <span class="badge assignee">Thomas</span>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Router</span>
+                    </div>
+                </div>
+
+                <div class="card p2">
+                    <div class="card-title">Déconnexion globale</div>
+                    <div class="card-meta">
+                        <span class="badge story-points">2 pts</span>
+                        <span class="badge assignee">Thomas</span>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Auth</span>
+                    </div>
+                </div>
+
+                <div class="card p2">
+                    <div class="card-title">Gestion infos utilisateur</div>
+                    <div class="card-meta">
+                        <span class="badge story-points">4 pts</span>
+                        <span class="badge assignee">Thomas</span>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Forms</span>
+                    </div>
+                </div>
+
+                <div class="card p2">
+                    <div class="card-title">API intégration Deliveroo</div>
+                    <div class="card-meta">
+                        <span class="badge story-points">8 pts</span>
+                        <span class="badge assignee">Henriette</span>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Partner API</span>
+                    </div>
+                </div>
+
+                <div class="card p2">
+                    <div class="card-title">API génération Instagram</div>
+                    <div class="card-meta">
+                        <span class="badge story-points">6 pts</span>
+                        <span class="badge assignee">Henriette</span>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Canvas</span>
+                    </div>
+                </div>
+
+                <div class="card p2">
+                    <div class="card-title">Gestion emails multiples</div>
+                    <div class="card-meta">
+                        <span class="badge story-points">4 pts</span>
+                        <span class="badge assignee">Henriette</span>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Auth ext</span>
+                    </div>
+                </div>
+
+                <div class="card p2">
+                    <div class="card-title">Gestion sessions</div>
+                    <div class="card-meta">
+                        <span class="badge story-points">2 pts</span>
+                        <span class="badge assignee">Henriette</span>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Sessions</span>
+                    </div>
+                </div>
+
+                <div class="card p2">
+                    <div class="card-title">Infrastructure déploiement</div>
+                    <div class="card-meta">
+                        <span class="badge story-points">3 pts</span>
+                        <span class="badge assignee">Thomas+H</span>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Vercel</span>
+                        <span class="tech-tag">Actions</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Priorité 3 -->
+        <div class="section p3-section">
+            <div class="section-header">
+                <span>📋 Priorité 3 (P3) - 3 tâches</span>
+                <span>13 points</span>
+            </div>
+            <div class="cards-grid">
+                <div class="card p3">
+                    <div class="card-title">Interface branding restaurateur</div>
+                    <div class="card-meta">
+                        <span class="badge story-points">5 pts</span>
+                        <span class="badge assignee">Thomas</span>
+                    </div>
+                    <div class="card-description">Interface complète de personnalisation de l'identité visuelle</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Color picker</span>
+                    </div>
+                </div>
+
+                <div class="card p3">
+                    <div class="card-title">API gestion branding</div>
+                    <div class="card-meta">
+                        <span class="badge story-points">3 pts</span>
+                        <span class="badge assignee">Henriette</span>
+                    </div>
+                    <div class="card-description">API de stockage et gestion de l'identité visuelle par restaurant</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">JSON fields</span>
+                    </div>
+                </div>
+
+                <div class="card p3">
+                    <div class="card-title">Tests validation finale</div>
+                    <div class="card-meta">
+                        <span class="badge story-points">5 pts</span>
+                        <span class="badge assignee">Soufiane</span>
+                    </div>
+                    <div class="card-description">Validation complète de tous les workflows utilisateur</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Tests fonctionnels</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="summary-section">
+        <div style="text-align: center; font-weight: bold; margin-bottom: 10px;">Estimation Globale: 12 semaines (3 mois)</div>
+        <div class="summary-grid">
+            <div class="summary-item">
+                <span class="summary-number">68</span>
+                <div class="summary-label">Thomas (Front-End)<br>15 tâches</div>
+            </div>
+            <div class="summary-item">
+                <span class="summary-number">43</span>
+                <div class="summary-label">Henriette (Back-End)<br>10 tâches</div>
+            </div>
+            <div class="summary-item">
+                <span class="summary-number">3</span>
+                <div class="summary-label">Collaboration DevOps<br>1 tâche</div>
+            </div>
+            <div class="summary-item">
+                <span class="summary-number">5</span>
+                <div class="summary-label">Product Owner<br>1 tâche validation</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
