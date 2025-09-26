@@ -97,176 +97,211 @@
         <!-- Spécifications Techniques -->
         <section id="specs" class="section">
             <h2>⚙️ Spécifications Techniques</h2>
-            
-            <div class="spec-section">
-                <h3>🎯 Vue d'ensemble du projet</h3>
-                <p><strong>Menu Maker by Qwenta</strong> est un outil en ligne permettant aux restaurateurs de créer et personnaliser leurs menus facilement, avec export PDF et intégration aux plateformes de livraison.</p>
-            </div>
+            <p class="doc-metadata"><strong>Version 1.0</strong> - Thomas Sifferlé - 08/09/25 - Approuvé par Soufiane</p>
 
-            <h3>🏗️ Architecture Technique</h3>
+            <h3>I. Choix technologiques</h3>
+            <p><strong>État des lieux des besoins fonctionnels et de leurs solutions techniques :</strong></p>
             
-            <div class="spec-section">
-                <h4>Frontend (Thomas)</h4>
+            <div class="tech-requirements-table">
                 <table class="tech-table">
                     <thead>
                         <tr>
-                            <th>Technologie</th>
-                            <th>Version</th>
-                            <th>Justification</th>
+                            <th>Besoin</th>
+                            <th>Contraintes</th>
+                            <th>Solution</th>
+                            <th>Description de la solution</th>
+                            <th>Justification (2 arguments)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>React.js</td>
-                            <td>18.x</td>
-                            <td>Framework imposé - Interfaces utilisateur réactives et composants réutilisables</td>
+                            <td>Interface utilisateur dynamique</td>
+                            <td>Interface moderne et réactive<br>Compatible avec les maquettes Figma<br>Gestion d'état complexe</td>
+                            <td>React.js + Tailwind CSS</td>
+                            <td>Framework JavaScript pour créer des interfaces utilisateur composants, couplé à un framework CSS utility-first pour un design cohérent et responsive.</td>
+                            <td>1) React est imposé par les spécifications et offre une excellente réactivité pour les interfaces dynamiques<br>2) Tailwind CSS assure une cohérence visuelle et accélère le développement avec ses classes utilitaires.</td>
                         </tr>
                         <tr>
-                            <td>Tailwind CSS</td>
-                            <td>3.x</td>
-                            <td>Framework utility-first pour design cohérent et développement accéléré</td>
+                            <td>Drag & Drop des éléments de menu</td>
+                            <td>- Réorganisation intuitive des plats<br>- Expérience utilisateur fluide<br>- Compatible React</td>
+                            <td>@hello-pangea/dnd</td>
+                            <td>Bibliothèque React spécialisée dans les interactions drag-and-drop avec gestion des états et animations.</td>
+                            <td>1) Bibliothèque mature et performante, parfaitement intégrée à l'écosystème React.<br>2) Gestion native des états de glisser-déposer et excellente accessibilité.</td>
                         </tr>
                         <tr>
-                            <td>React Hook Form</td>
-                            <td>7.x</td>
-                            <td>Gestion formulaires performante avec validation native</td>
+                            <td>Gestion des formulaires</td>
+                            <td>- Validation en temps réel<br>- Performance optimisée<br>- UX fluide</td>
+                            <td>React Hook Form + Zod</td>
+                            <td>React Hook Form pour la gestion performante des formulaires, Zod pour la validation des schémas de données.</td>
+                            <td>1) React Hook Form minimise les re-rendus et améliore les performances.<br>2) Zod assure une validation TypeScript-native cohérente frontend/backend.</td>
                         </tr>
                         <tr>
+                            <td>Gestion d'état global</td>
+                            <td>- État partagé entre composants<br>- Gestion du cache API<br>- Synchronisation données</td>
+                            <td>React Query + Zustand</td>
+                            <td>React Query pour la gestion du cache et synchronisation serveur, Zustand pour l'état local global simple.</td>
+                            <td>1) React Query optimise automatiquement les requêtes et gère le cache intelligemment.<br>2) Zustand offre une API simple sans boilerplate pour l'état global.</td>
+                        </tr>
+                        <tr>
+                            <td>Authentification utilisateur</td>
+                            <td>- Sécurité robuste<br>- Gestion des sessions<br>- Magic Link – email only</td>
+                            <td>Supabase Auth</td>
+                            <td>Service d'authentification complet avec gestion des sessions, OAuth, et sécurité intégrée.</td>
+                            <td>1) Solution clé en main avec toutes les fonctionnalités d'auth (signup, login, reset, etc.).<br>2) Sécurité enterprise-grade avec JWT et sessions automatiques.</td>
+                        </tr>
+                        <tr>
+                            <td>Base de données</td>
+                            <td>- Relationnel pour menus/plats<br>- Performances optimales<br>- Sécurité avancée</td>
+                            <td>PostgreSQL via Supabase</td>
+                            <td>Base de données relationnelle hébergée avec Row Level Security et API REST auto-générée.</td>
+                            <td>1) PostgreSQL est performant pour les données relationnelles complexes (menus → catégories → plats).<br>2) Supabase génère automatiquement une API REST sécurisée avec RLS.</td>
+                        </tr>
+                        <tr>
+                            <td>Stockage des fichiers</td>
+                            <td>- Upload logos restaurants<br>- Images de plats<br>- Sécurité uploads</td>
+                            <td>Supabase Storage</td>
+                            <td>Service de stockage avec validation MIME, redimensionnement automatique et CDN intégré.</td>
+                            <td>1) Intégration native avec l'authentification Supabase (sécurité par utilisateur).<br>2) Validation automatique des types de fichiers et optimisation images.</td>
+                        </tr>
+                        <tr>
+                            <td>Génération PDF</td>
+                            <td>- Export haute qualité<br>- Personnalisation design<br>- Performance</td>
                             <td>React-PDF</td>
-                            <td>Latest</td>
-                            <td>Génération PDF côté client avec contrôle total du layout</td>
+                            <td>Bibliothèque React pour générer des PDFs programmatiquement avec contrôle total du layout.</td>
+                            <td>1) Rendu cohérent avec l'interface React, même logique de composants.<br>2) Contrôle précis de la mise en page pour respecter le design des menus</td>
                         </tr>
                         <tr>
-                            <td>Zustand</td>
-                            <td>4.x</td>
-                            <td>Gestion d'état global simple et performante</td>
+                            <td>Intégrations externes Diffusion des menus et export</td>
+                            <td>- Paiement sécurisé<br>- Partage Instagram<br>- Export Deliveroo</td>
+                            <td>Stripe + Instagram API + Deliveroo API</td>
+                            <td>- Stripe pour les paiements d'impression<br>- Instagram Basic Display API pour le partage<br>- API Deliveroo Partner</td>
+                            <td>1) Stripe est la référence pour les paiements en ligne avec excellente UX.<br>2) APIs officielles pour garantir la compatibilité long terme.</td>
+                        </tr>
+                        <tr>
+                            <td>Hébergement frontend</td>
+                            <td>- Déploiement automatique<br>- Performance globale<br>- Domaine custom</td>
+                            <td>Vercel</td>
+                            <td>Plateforme d'hébergement optimisée pour React avec CI/CD automatique et CDN mondial.</td>
+                            <td>1) Intégration native avec React et GitHub pour déploiements automatiques.<br>2) CDN global et optimisations automatiques (lazy loading, compression).</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
+            <h3>II. Liens avec le back-end</h3>
             <div class="spec-section">
-                <h4>Backend (Henriette)</h4>
-                <table class="tech-table">
-                    <thead>
-                        <tr>
-                            <th>Technologie</th>
-                            <th>Version</th>
-                            <th>Justification</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Supabase</td>
-                            <td>Latest</td>
-                            <td>Backend-as-a-Service complet : Auth, DB, Storage, Real-time</td>
-                        </tr>
-                        <tr>
-                            <td>PostgreSQL</td>
-                            <td>15.x</td>
-                            <td>Base relationnelle robuste, intégrée Supabase</td>
-                        </tr>
-                        <tr>
-                            <td>TypeScript</td>
-                            <td>5.x</td>
-                            <td>Cohérence frontend/backend, validation Zod partagée</td>
-                        </tr>
-                        <tr>
-                            <td>Row Level Security</td>
-                            <td>Native PG</td>
-                            <td>Isolation des données par utilisateur au niveau base</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="spec-section">
-                <h4>Infrastructure & Déploiement</h4>
+                <h4>Langage serveur</h4>
+                <p><strong>Supabase (PostgreSQL + Edge Functions)</strong></p>
                 <ul>
-                    <li><strong>Frontend :</strong> Vercel (CDN mondial, déploiement automatique GitHub)</li>
-                    <li><strong>Backend :</strong> Supabase Cloud (infrastructure européenne RGPD)</li>
-                    <li><strong>Domaine :</strong> menu.qwenta.fr (SSL automatique via Vercel)</li>
-                    <li><strong>CI/CD :</strong> GitHub Actions (tests automatiques + déploiement)</li>
+                    <li>Backend-as-a-Service avec PostgreSQL comme base de données</li>
+                    <li>Edge Functions en TypeScript pour la logique métier complexe</li>
+                    <li>API REST auto-générée avec authentification intégrée</li>
+                </ul>
+
+                <h4>API choisie</h4>
+                <p><strong>API REST Supabase + APIs externes</strong></p>
+                <ul>
+                    <li>API REST automatique générée par Supabase à partir du schéma PostgreSQL</li>
+                    <li>APIs externes : Stripe (paiements), Instagram (partage), Deliveroo (export)</li>
+                    <li>Real-time subscriptions pour les mises à jour en temps réel</li>
+                </ul>
+
+                <h4>Base de données</h4>
+                <p><strong>PostgreSQL (via Supabase)</strong></p>
+                <ul>
+                    <li>Base relationnelle pour gérer les relations complexes (restaurants → menus → catégories → plats)</li>
+                    <li>Row Level Security (RLS) pour la sécurité au niveau utilisateur</li>
+                    <li>Performances optimisées avec indexation automatique</li>
                 </ul>
             </div>
 
-            <h3>📊 Modèle de données</h3>
+            <h3>III. Préconisations concernant le domaine et l'hébergement</h3>
             <div class="spec-section">
-                <pre class="code-block">-- Tables principales
-users (
-  id UUID PRIMARY KEY,
-  email VARCHAR UNIQUE NOT NULL,
-  created_at TIMESTAMP DEFAULT NOW()
-);
-
-restaurants (
-  id UUID PRIMARY KEY,
-  user_id UUID REFERENCES users(id),
-  name VARCHAR NOT NULL,
-  logo_url VARCHAR,
-  brand_colors JSONB,
-  created_at TIMESTAMP DEFAULT NOW()
-);
-
-menus (
-  id UUID PRIMARY KEY,
-  restaurant_id UUID REFERENCES restaurants(id),
-  name VARCHAR NOT NULL,
-  design_preferences JSONB,
-  created_at TIMESTAMP DEFAULT NOW(),
-  updated_at TIMESTAMP DEFAULT NOW()
-);
-
-categories (
-  id UUID PRIMARY KEY,
-  menu_id UUID REFERENCES menus(id),
-  name VARCHAR NOT NULL,
-  position INTEGER,
-  created_at TIMESTAMP DEFAULT NOW()
-);
-
-dishes (
-  id UUID PRIMARY KEY,
-  category_id UUID REFERENCES categories(id),
-  name VARCHAR NOT NULL,
-  description TEXT,
-  price DECIMAL(10,2),
-  image_url VARCHAR,
-  position INTEGER,
-  created_at TIMESTAMP DEFAULT NOW()
-);</pre>
-            </div>
-
-            <h3>🔒 Sécurité</h3>
-            <div class="spec-section">
+                <h4>Nom de domaine</h4>
                 <ul>
-                    <li><strong>Authentification :</strong> Magic Links Supabase (JWT + Refresh Tokens)</li>
-                    <li><strong>Autorisation :</strong> Row Level Security PostgreSQL</li>
-                    <li><strong>Validation :</strong> Zod schemas partagés frontend/backend</li>
-                    <li><strong>Upload :</strong> Validation MIME types, limitation taille fichiers</li>
-                    <li><strong>HTTPS :</strong> Obligatoire sur toutes les communications</li>
+                    <li><strong>menu.qwenta.fr</strong> (sous-domaine Qwenta)</li>
+                    <li>Cohérence avec l'écosystème Qwenta</li>
+                    <li>SSL automatique via Vercel</li>
+                </ul>
+
+                <h4>Hébergement</h4>
+                <ul>
+                    <li><strong>Frontend</strong> : Vercel (CDN mondial, déploiements automatiques)</li>
+                    <li><strong>Backend/DB</strong> : Supabase (infrastructure européenne RGPD-compliant)</li>
+                    <li><strong>CDN</strong> : Intégré Vercel + Supabase pour optimisations globales</li>
+                </ul>
+
+                <h4>Adresses e-mail</h4>
+                <ul>
+                    <li><strong>Notifications</strong> : Via Supabase Auth (reset password, confirmations)</li>
+                    <li><strong>Support</strong> : Intégration possible avec le système e-mail Qwenta</li>
                 </ul>
             </div>
 
-            <h3>♿ Accessibilité</h3>
+            <h3>IV. Accessibilité</h3>
             <div class="spec-section">
+                <h4>Compatibilité navigateur</h4>
                 <ul>
-                    <li><strong>Navigation clavier :</strong> Tab, Enter, Escape sur tous éléments interactifs</li>
-                    <li><strong>Lecteurs d'écran :</strong> Structure sémantique HTML5, ARIA labels</li>
-                    <li><strong>Contrastes :</strong> Ratios conformes WCAG 2.1 AA (4.5:1 minimum)</li>
-                    <li><strong>Focus visible :</strong> Indicateurs visuels sur éléments actifs</li>
-                    <li><strong>Gestion focus :</strong> Piégeage dans modales, retour focus logique</li>
+                    <li><strong>Chrome</strong> : Dernières 2 versions</li>
+                    <li><strong>Safari</strong> : Dernières 2 versions</li>
+                    <li><strong>Firefox</strong> : Dernières 2 versions</li>
+                    <li>Support JavaScript ES2020+ requis</li>
+                </ul>
+
+                <h4>Types d'appareils</h4>
+                <ul>
+                    <li><strong>Desktop uniquement</strong> (selon spécifications)</li>
+                    <li>Résolution minimum : 1280×720px</li>
+                    <li>Navigation clavier complète</li>
+                    <li>Compatible lecteurs d'écran (ARIA labels)</li>
                 </ul>
             </div>
 
-            <h3>🎯 Critères de succès techniques</h3>
+            <h3>V. Recommandations en termes de sécurité</h3>
             <div class="spec-section">
+                <h4>Sécurité des accès</h4>
                 <ul>
-                    <li><strong>Performance :</strong> First Contentful Paint < 2s, Time to Interactive < 3s</li>
-                    <li><strong>Compatibilité :</strong> Chrome, Safari, Firefox dernières versions desktop</li>
-                    <li><strong>Responsive :</strong> Non requis (desktop uniquement selon specs)</li>
-                    <li><strong>PWA :</strong> Non requis pour MVP</li>
-                    <li><strong>SEO :</strong> Landing page indexable, meta tags appropriées</li>
+                    <li><strong>Authentification</strong> : JWT via Supabase Auth avec refresh tokens</li>
+                    <li><strong>Sessions</strong> : Expiration automatique et renouvellement sécurisé</li>
+                    <li><strong>HTTPS</strong> : Obligatoire sur toutes les communications</li>
+                </ul>
+
+                <h4>Sécurité des données</h4>
+                <ul>
+                    <li><strong>Validation</strong> : Zod pour validation frontend/backend cohérente</li>
+                    <li><strong>RLS</strong> : Row Level Security PostgreSQL pour isolation des données</li>
+                    <li><strong>Upload</strong> : Validation MIME types et taille des fichiers</li>
+                </ul>
+
+                <h4>Protection RGPD</h4>
+                <ul>
+                    <li><strong>Consentement</strong> : Gestion des cookies via Vercel Analytics</li>
+                    <li><strong>Données</strong> : Hébergement EU (Supabase région européenne)</li>
+                    <li><strong>Suppression</strong> : Outils Supabase pour right-to-be-forgotten</li>
+                </ul>
+            </div>
+
+            <h3>VI. Maintenance du site et futures mises à jour</h3>
+            <div class="spec-section">
+                <h4>Stratégie de maintenance</h4>
+                <ul>
+                    <li><strong>Monitoring</strong> : Supabase Dashboard pour surveillance temps réel</li>
+                    <li><strong>Logs</strong> : Centralisés via Vercel Analytics et Supabase</li>
+                    <li><strong>Backups</strong> : Automatiques via Supabase (point-in-time recovery)</li>
+                </ul>
+
+                <h4>Mises à jour et évolutions</h4>
+                <ul>
+                    <li><strong>CI/CD</strong> : GitHub Actions pour tests automatiques + déploiement Vercel</li>
+                    <li><strong>Versioning</strong> : Git flow avec branches de feature et review code</li>
+                    <li><strong>Rollback</strong> : Rollback instantané via Vercel Dashboard</li>
+                </ul>
+
+                <h4>Montée en charge</h4>
+                <ul>
+                    <li><strong>Auto-scaling</strong> : Automatique via Supabase et Vercel</li>
+                    <li><strong>Cache</strong> : React Query côté client + CDN Vercel</li>
+                    <li><strong>Optimisations</strong> : Code splitting React + lazy loading automatique</li>
                 </ul>
             </div>
         </section>

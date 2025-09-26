@@ -335,10 +335,25 @@ body {
     border-radius: 5px;
 }
 
+.doc-metadata {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 30px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 5px;
+}
+
+.tech-requirements-table {
+    margin: 20px 0;
+    overflow-x: auto;
+}
+
 .tech-table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
+    font-size: 14px;
 }
 
 .tech-table th,
@@ -346,11 +361,44 @@ body {
     border: 1px solid #ddd;
     padding: 12px;
     text-align: left;
+    vertical-align: top;
 }
 
 .tech-table th {
     background: #667eea;
     color: white;
+    font-weight: bold;
+}
+
+.tech-table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.tech-table tr:hover {
+    background: #f5f5f5;
+}
+
+.tech-table td:nth-child(1) {
+    width: 15%;
+    font-weight: 500;
+}
+
+.tech-table td:nth-child(2) {
+    width: 20%;
+}
+
+.tech-table td:nth-child(3) {
+    width: 15%;
+    font-weight: 500;
+    color: #667eea;
+}
+
+.tech-table td:nth-child(4) {
+    width: 25%;
+}
+
+.tech-table td:nth-child(5) {
+    width: 25%;
 }
 
 .code-block {
