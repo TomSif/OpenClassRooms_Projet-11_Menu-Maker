@@ -408,12 +408,307 @@ body {
     overflow-x: auto;
 }
 
-/* Veille technologique */
-.veille-tip {
-    background: #e8f5e8;
-    padding: 20px;
+/* Veille technologique - Wakelet */
+.wakelet-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.wakelet-hero-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.wakelet-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    font-style: italic;
+    margin: 20px 0;
+}
+
+.why-veille-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.why-card {
+    background: white;
     border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    border-left: 5px solid #7dd3c0;
+    transition: transform 0.3s ease;
+}
+
+.why-card:hover {
+    transform: translateY(-3px);
+}
+
+.why-number {
+    background: #7dd3c0;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.why-card h4 {
+    color: #333;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.why-card p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.wakelet-choice-section {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 15px;
+    margin: 30px 0;
+    border-left: 4px solid #7dd3c0;
+}
+
+.wakelet-logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.wakelet-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.wakelet-logo-section h4 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.wakelet-advantages {
+    margin: 20px 0;
+}
+
+.advantage-item {
+    background: white;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    border-left: 3px solid #7dd3c0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.wakelet-links {
     margin-top: 25px;
+}
+
+.wakelet-link-item {
+    background: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.wakelet-link-item a {
+    color: #7dd3c0;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.wakelet-link-item a:hover {
+    text-decoration: underline;
+}
+
+.resources-section {
+    margin: 30px 0;
+}
+
+.resource-subsection {
+    margin: 20px 0;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.resource-subsection h5 {
+    color: #667eea;
+    margin: 15px 0 10px;
+    font-size: 1.1rem;
+}
+
+.resource-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 15px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.rss-section {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 15px;
+    margin: 30px 0;
+    border-left: 4px solid #7dd3c0;
+}
+
+.rss-summary {
+    display: grid;
+    gap: 20px;
+}
+
+.rss-item {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.rss-item strong {
+    color: #333;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.rss-item ul {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.rss-item li {
+    margin: 5px 0;
+    color: #555;
+}
+
+.utilisation-section {
+    margin: 30px 0;
+}
+
+.utilisation-schema {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+}
+
+.enterprise-usage {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 15px;
+    margin: 20px 0;
+}
+
+.usage-item {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.usage-number {
+    background: #7dd3c0;
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.usage-content {
+    flex: 1;
+}
+
+.usage-content strong {
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.annexes-section {
+    display: grid;
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.annexe-item {
+    display: flex;
+    gap: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.annexe-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 30px rgba(0,0,0,0.12);
+}
+
+.pdf-preview {
+    width: 120px;
+    height: 85px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.annexe-content {
+    flex: 1;
+}
+
+.annexe-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.docs-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.docs-label {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.annexe-content h5 {
+    color: #333;
+    font-size: 1.1rem;
+    margin: 8px 0;
+}
+
+.annexe-content p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.4;
 }
 
 /* Présentation */

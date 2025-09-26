@@ -308,69 +308,193 @@
 
         <!-- Veille Technologique -->
         <section id="veille" class="section">
-            <h2>🔍 Guide de Veille Technologique</h2>
+            <h2>🔍 Présentation de l'outil de veille technique - WAKELET</h2>
             
-            <div class="spec-section">
-                <h3>🎯 Objectifs de la veille</h3>
-                <ul>
-                    <li>Maintenir la compétitivité technologique du projet Menu Maker</li>
-                    <li>Anticiper les évolutions des frameworks React et écosystème JavaScript</li>
-                    <li>Surveiller les nouveautés Supabase et alternatives Backend-as-a-Service</li>
-                    <li>Identifier les opportunités d'amélioration UX/UI</li>
-                </ul>
+            <div class="wakelet-header">
+                <img src="/img/wakelet-hero.jpg" alt="Menu Maker By Qwenta - Présentation Wakelet" class="wakelet-hero-image">
+                <p class="wakelet-subtitle">Menu Maker By Qwenta - Présentation de l'outil de veille technique <strong>WAKELET</strong></p>
             </div>
 
-            <h3>📚 Sources de veille recommandées</h3>
+            <h3>Pourquoi faire une veille technique ?</h3>
             
-            <div class="spec-section">
-                <h4>🔧 Veille technique React/Frontend</h4>
-                <ul>
-                    <li><strong>React Blog :</strong> react.dev/blog - Annonces officielles</li>
-                    <li><strong>Vercel Blog :</strong> vercel.com/blog - Next.js et déploiement</li>
-                    <li><strong>CSS-Tricks :</strong> css-tricks.com - Techniques CSS avancées</li>
-                    <li><strong>Smashing Magazine :</strong> smashingmagazine.com - UX/UI best practices</li>
-                </ul>
-            </div>
-
-            <div class="spec-section">
-                <h4>🗄️ Veille Backend/Database</h4>
-                <ul>
-                    <li><strong>Supabase Blog :</strong> supabase.com/blog - Nouvelles fonctionnalités</li>
-                    <li><strong>PostgreSQL News :</strong> postgresql.org - Évolutions base de données</li>
-                    <li><strong>Hacker News :</strong> news.ycombinator.com - Tendances tech générales</li>
-                </ul>
-            </div>
-
-            <div class="spec-section">
-                <h4>📱 Veille UX/Design</h4>
-                <ul>
-                    <li><strong>Dribbble :</strong> dribbble.com/tags/restaurant - Inspiration design resto</li>
-                    <li><strong>Behance :</strong> behance.net - Études de cas UX complètes</li>
-                    <li><strong>Nielsen Norman Group :</strong> nngroup.com - Recherche UX</li>
-                </ul>
-            </div>
-
-            <h3>⚡ Méthode de veille recommandée</h3>
-            <div class="spec-section">
-                <h4>📅 Planning hebdomadaire</h4>
-                <ul>
-                    <li><strong>Lundi :</strong> 30min - Revue blogs techniques (React, Supabase)</li>
-                    <li><strong>Mercredi :</strong> 20min - Veille concurrence et inspiration design</li>
-                    <li><strong>Vendredi :</strong> 15min - Newsletter tech et synthèse semaine</li>
-                </ul>
+            <div class="why-veille-grid">
+                <div class="why-card">
+                    <div class="why-number">1</div>
+                    <h4>Suivre l'évolution rapide des technologies</h4>
+                    <p>Le web évolue constamment : <strong>nouveaux frameworks</strong>, mises à jour de librairies, bonnes pratiques qui changent. La veille permet de rester à jour et d'éviter d'utiliser des solutions obsolètes.</p>
+                </div>
                 
-                <h4>🔄 Actions concrètes</h4>
-                <ul>
-                    <li>Tester une nouvelle librairie/technique par sprint</li>
-                    <li>Partager découvertes pertinentes en équipe (Slack/email)</li>
-                    <li>Documenter les tests dans un fichier VEILLE.md du projet</li>
-                    <li>Évaluer impact potentiel : Immédiat / Prochain sprint / Long terme</li>
-                </ul>
+                <div class="why-card">
+                    <div class="why-number">2</div>
+                    <h4>Améliorer la qualité et la pertinence de ses projets</h4>
+                    <p>En découvrant régulièrement de <strong>nouveaux outils</strong>, approches ou retours d'expérience, on peut optimiser son code, renforcer l'accessibilité, la performance et la sécurité de ses applications.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-number">3</div>
+                    <h4>Prévenir les risques de sécurité et de maintenance</h4>
+                    <p>Une veille partagée détecte tôt les <strong>vulnérabilités</strong> (zero-day) ou les librairies abandonnées, ce qui permet d'appliquer des correctifs, de restreindre les déploiements ou de planifier une migration avant qu'un incident coûteux n'arrive.</p>
+                </div>
             </div>
 
-            <div class="veille-tip">
-                <h4>💡 Conseil : Focus sur l'action</h4>
-                <p>La veille n'est utile que si elle mène à des actions concrètes. Privilégiez 3-4 sources de qualité consultées régulièrement plutôt que 20 sources survolées. L'objectif est d'améliorer le produit, pas de collectionner l'information.</p>
+            <h3>Choix de l'outil de veille</h3>
+            
+            <div class="wakelet-choice-section">
+                <div class="wakelet-logo-section">
+                    <img src="/img/wakelet-logo.png" alt="Logo Wakelet" class="wakelet-logo">
+                    <h4>Wakelet</h4>
+                </div>
+                
+                <div class="wakelet-advantages">
+                    <div class="advantage-item">
+                        <strong>Sélectivité et pertinence des contenus :</strong> contrairement à un agrégateur RSS brut comme Feedly qui oblige à trier beaucoup de bruit, Wakelet me permet de rassembler uniquement des ressources que j'ai jugées utiles pour ma stack (documentation officielle, tutoriels, articles ciblés). Cela garantit que ma veille est directement exploitable pour mes projets.
+                    </div>
+                    
+                    <div class="advantage-item">
+                        <strong>Centralisation multi-sources :</strong> Wakelet me sert de hub unique où je regroupe plusieurs formats et canaux (articles, docs, vidéos, RSS). Pour compléter, j'y ai intégré une colonne RSS personnalisée (via Reddit.rss et Rss.app), ce qui combine la flexibilité des flux automatisés avec la curation manuelle.<br>
+                        <strong>Résultat :</strong> une veille à la fois organisée et complète.
+                    </div>
+                </div>
+                
+                <div class="wakelet-links">
+                    <div class="wakelet-link-item">
+                        <strong>Liens vers la veille ressources de dev :</strong><br>
+                        <a href="https://wakelet.com/wake/gfUWsJhx__7de1gSmU-CM" target="_blank">https://wakelet.com/wake/gfUWsJhx__7de1gSmU-CM</a>
+                    </div>
+                    
+                    <div class="wakelet-link-item">
+                        <strong>Lien vers la veille développement web général :</strong><br>
+                        <a href="https://wakelet.com/wake/vp9NOkwrXayMADkxdA7sx" target="_blank">https://wakelet.com/wake/vp9NOkwrXayMADkxdA7sx</a>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Choix des ressources</h3>
+            
+            <div class="resources-section">
+                <h4>1. Ressources de développement (stack technique)</h4>
+                
+                <div class="resource-subsection">
+                    <h5>Carte mentale</h5>
+                    <img src="/img/carte-mentale-stack.png" alt="Carte mentale ressources stack technique" class="resource-image">
+                    
+                    <h5>Exemples</h5>
+                    <img src="/img/exemples-stack.png" alt="Exemples ressources stack technique" class="resource-image">
+                </div>
+
+                <h4>2. Ressources de développement web général (veille globale)</h4>
+                
+                <div class="resource-subsection">
+                    <h5>Carte mentale</h5>
+                    <img src="/img/carte-mentale-generale.png" alt="Carte mentale développement web général" class="resource-image">
+                    
+                    <h5>Exemples</h5>
+                    <img src="/img/exemples-generale.png" alt="Exemples développement web général" class="resource-image">
+                </div>
+            </div>
+
+            <h3>Flux RSS automatisés intégrés</h3>
+            
+            <div class="rss-section">
+                <div class="rss-summary">
+                    <div class="rss-item">
+                        <strong>Flux Reddit multi-subreddit personnalisé :</strong>
+                        <ul>
+                            <li>8 communautés techniques ciblées Menu Maker</li>
+                            <li>webdev, reactjs, node, stripe, tailwindcss, supabase, vercel, react</li>
+                            <li>Discussions et solutions en temps réel</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="rss-item">
+                        <strong>Sites transformés via RSS.app :</strong>
+                        <ul>
+                            <li>Blogs officiels sans flux RSS natif</li>
+                            <li>Actualités techniques automatisées</li>
+                            <li>Mises à jour des technologies du projet</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="rss-item">
+                        <strong>Approche hybride :</strong>
+                        <ul>
+                            <li>Curation manuelle = sélectivité et pertinence</li>
+                            <li>Flux automatisés = réactivité et actualités</li>
+                            <li>Combinaison optimale sans surcharge</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="rss-item">
+                        <strong>Résultat :</strong>
+                        <ul>
+                            <li>90 ressources totales</li>
+                            <li>Veille organisée ET dynamique</li>
+                            <li>Couverture complète du stack technique</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Utilisations et Avantages</h3>
+            
+            <div class="utilisation-section">
+                <img src="/img/utilisations-schema.png" alt="Schéma utilisations et avantages" class="utilisation-schema">
+                
+                <h4>Utilisation en entreprise :</h4>
+                
+                <div class="enterprise-usage">
+                    <div class="usage-item">
+                        <span class="usage-number">1.</span>
+                        <div class="usage-content">
+                            <strong>Outil de centralisation :</strong><br>
+                            Créer un hub de documentation qui centralise à la fois les ressources techniques et les supports pédagogiques, permettant à l'équipe d'avoir la même base de connaissances et d'être alertée simultanément lors d'un changement important.
+                        </div>
+                    </div>
+                    
+                    <div class="usage-item">
+                        <span class="usage-number">2.</span>
+                        <div class="usage-content">
+                            <strong>Outil collaboratif :</strong><br>
+                            Permettre à chaque membre d'apporter sa contribution à la veille commune, renforçant l'esprit d'équipe et créant une dynamique positive de partage des connaissances entre développeurs.
+                        </div>
+                    </div>
+                    
+                    <div class="usage-item">
+                        <span class="usage-number">3.</span>
+                        <div class="usage-content">
+                            <strong>Outil de sécurité et planification :</strong><br>
+                            Détecter rapidement les bibliothèques abandonnées ou les failles de sécurité critiques grâce à une surveillance quotidienne de quelques minutes, permettant de réagir à temps en planifiant les migrations ou corrections nécessaires.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Annexes : Export - Fichiers pdf complets</h3>
+            
+            <div class="annexes-section">
+                <div class="annexe-item">
+                    <img src="/img/pdf-export-1.png" alt="Export PDF Menu Maker #1" class="pdf-preview">
+                    <div class="annexe-content">
+                        <div class="annexe-header">
+                            <img src="/img/google-docs-icon.png" alt="Google Docs" class="docs-icon">
+                            <span class="docs-label">Google Docs</span>
+                        </div>
+                        <h5>MENU MAKER #1.pdf</h5>
+                        <p>Export en pdf de la veille – Menu Maker #1 – Ressources de dev</p>
+                    </div>
+                </div>
+                
+                <div class="annexe-item">
+                    <img src="/img/pdf-export-2.png" alt="Export PDF Menu Maker #2" class="pdf-preview">
+                    <div class="annexe-content">
+                        <div class="annexe-header">
+                            <img src="/img/google-docs-icon.png" alt="Google Docs" class="docs-icon">
+                            <span class="docs-label">Google Docs</span>
+                        </div>
+                        <h5>Menu-Maker #2.pdf</h5>
+                        <p>Export en pdf de la veille – Menu Maker #2 – Développement Web Général</p>
+                    </div>
+                </div>
             </div>
         </section>
 
